@@ -7,6 +7,7 @@ import { useChildStore } from "@/store/useChildStore";
 import { useAuthStore } from "@/store/useAuthStore";
 import { supabase } from "@/lib/supabase";
 import { cn } from "@/lib/utils";
+import { speechService } from "@/lib/speech";
 
 const AVATARS = [
   { id: "1", char: "🦊", color: "bg-orange-400", name: "Zorro" },
@@ -20,10 +21,26 @@ export default function OnboardingNinos() {
   const [selectedAvatar, setSelectedAvatar] = useState<string | null>(null);
   const [name, setName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isListening, setIsListening] = useState(false);
   
   const profile = useAuthStore((state) => state.profile);
   const setSelectedChild = useChildStore((state) => state.setSelectedChild);
   const router = useRouter();
+
+  const handleVoiceName = () => {
+    setIsListening(true);
+    speechService.startListening(
+      (text: string) => {
+        setName(text);
+        setIsListening(false);
+        if (text.length > 2) setTimeout(() => setStep(2), 1000);
+      },
+      (err: any) => {
+        setIsListening(false);
+        console.error(err);
+      }
+    );
+  };
 
   const handleFinish = async () => {
     if (!selectedAvatar || !name || !profile) return;
@@ -54,7 +71,8 @@ export default function OnboardingNinos() {
       current_level: 1,
       total_xp: 0,
       avatar_url: newChild.avatar_url,
-      neurodivergent_mode: false
+      neurodivergent_mode: false,
+      unlockedRewards: []
     });
 
     router.push("/ninos/mapa");
@@ -148,14 +166,30 @@ export default function OnboardingNinos() {
       </AnimatePresence>
 
       {/* VUI Mentor Simulation */}
-      <div className="fixed bottom-8 right-8 flex items-center gap-4 bg-white/90 p-4 rounded-2xl shadow-xl border-2 border-primary/20">
-        <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center animate-pulse">
-            <span className="material-symbols-outlined text-primary">record_voice_over</span>
+      <motion.button 
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={handleVoiceName}
+        className={cn(
+          "fixed bottom-8 right-8 flex items-center gap-4 p-4 rounded-2xl shadow-xl border-2 transition-all",
+          isListening 
+            ? "bg-rose-500 border-rose-300 text-white" 
+            : "bg-white/90 border-primary/20 text-sky-900"
+        )}
+      >
+        <div className={cn(
+          "w-12 h-12 rounded-full flex items-center justify-center",
+          isListening ? "bg-white/20 animate-ping" : "bg-primary/10"
+        )}>
+            <span className={cn("material-symbols-outlined", isListening ? "text-white" : "text-primary")}>
+              {isListening ? "hearing" : "record_voice_over"}
+            </span>
         </div>
-        <div className="text-xs font-bold text-sky-900 leading-tight">
-            TE ESCUCHO...<br/>DIME TU NOMBRE
+        <div className="text-xs font-bold leading-tight text-left">
+            {isListening ? "ESCUCHANDO..." : "PULSA PARA HABLAR"}
+            <br/>DIME TU NOMBRE
         </div>
-      </div>
+      </motion.button>
     </div>
   );
 }

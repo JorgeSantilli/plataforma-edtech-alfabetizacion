@@ -35,6 +35,13 @@ export default function MapaAventuras() {
           </div>
           
           <div className="flex flex-1 justify-end gap-4 md:gap-8 items-center">
+            <Link href="/ninos/recompensas" className="flex items-center gap-2 hover:scale-105 transition-transform group">
+                <div className="size-10 bg-amber-400 rounded-full flex items-center justify-center text-white shadow-lg border-2 border-white group-hover:bg-amber-500 transition-colors">
+                    <span className="material-symbols-outlined">emoji_events</span>
+                </div>
+                <span className="hidden md:block font-black text-amber-600 text-sm">TROFEOS</span>
+            </Link>
+
             <div className="flex gap-2">
               <div className="flex min-w-[100px] items-center justify-center rounded-full h-10 px-4 bg-primary text-white text-sm font-bold shadow-lg">
                 <span className="material-symbols-outlined mr-1 text-lg">star</span>

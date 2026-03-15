@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useChildStore } from '@/store/useChildStore';
 import { supabase } from '@/lib/supabase';
+import { cn } from '@/lib/utils';
+import { speechService } from '@/lib/speech';
 
 const QUESTIONS = [
   {
@@ -23,14 +25,40 @@ export default function ActividadFonologica() {
   const [currentStep, setCurrentStep] = useState(0);
   const [showSuccess, setShowSuccess] = useState(false);
   const [feedback, setFeedback] = useState<string | null>(null);
+  const [isListening, setIsListening] = useState(false);
   
-  const { selectedChild, addXP } = useChildStore();
+  const { selectedChild, addXP, addReward } = useChildStore();
   const question = QUESTIONS[currentStep];
+
+  const handleVoiceResponse = () => {
+    setIsListening(true);
+    speechService.startListening(
+      (text) => {
+        setIsListening(false);
+        const lowerText = text.toLowerCase();
+        // Buscar si el texto reconocido coincide con alguna de las opciones
+        const found = question.options.find(opt => 
+          lowerText.includes(opt.name.toLowerCase())
+        );
+        if (found) {
+          handleChoice(found.id);
+        } else {
+          setFeedback("🤔 No te entendí bien...");
+          setTimeout(() => setFeedback(null), 1500);
+        }
+      },
+      (err) => {
+        setIsListening(false);
+        console.error(err);
+      }
+    );
+  };
 
   const handleChoice = async (choiceId: string) => {
     if (choiceId === question.correctId) {
       setFeedback("✅ ¡EXCELENTE!");
       addXP(10);
+      addReward("estrella_brillante");
       
       // Registrar en DB (opcional por ahora para velocidad)
       if (selectedChild) {
@@ -110,6 +138,28 @@ export default function ActividadFonologica() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* Voice Interaction Button */}
+          <div className="flex flex-col items-center gap-2">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={handleVoiceResponse}
+              className={cn(
+                "size-20 rounded-full flex items-center justify-center shadow-2xl transition-all border-4",
+                isListening 
+                  ? "bg-rose-500 border-rose-300 animate-pulse" 
+                  : "bg-primary border-white"
+              )}
+            >
+              <span className="material-symbols-outlined text-4xl text-white">
+                {isListening ? "hearing" : "mic"}
+              </span>
+            </motion.button>
+            <p className="text-xs font-black text-slate-400 uppercase tracking-widest">
+              {isListening ? "Escuchando..." : "Pulsa para hablar"}
+            </p>
+          </div>
 
           <div className="w-full max-w-lg grid grid-cols-2 gap-6">
             {question.options.map((opt) => (
