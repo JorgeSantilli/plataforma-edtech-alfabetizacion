@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Kids Literacy Adventure</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="flex items-center bg-white dark:bg-slate-900 p-4 shadow-sm justify-between sticky top-0 z-10">
+<button class="text-primary flex size-14 shrink-0 items-center justify-center bg-primary/10 rounded-full hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined !text-4xl">arrow_back</span>
+</button>
+<div class="flex flex-col items-center flex-1 px-4">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">Forest Adventure</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Chapter 2: The Brave Lion</p>
+</div>
+<button class="text-primary flex size-14 shrink-0 items-center justify-center bg-primary/10 rounded-full">
+<span class="material-symbols-outlined !text-4xl">volume_up</span>
+</button>
+</header>
+<main class="flex-1 flex flex-col max-w-2xl mx-auto w-full p-4 gap-6">
+<div class="flex flex-col gap-3 px-2">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-slate-700 dark:text-slate-300 text-lg font-bold">Your Progress</p>
+<div class="flex items-center gap-2">
+<span class="text-slate-900 dark:text-slate-100 font-bold">8/10</span>
+<span class="text-2xl">🏆</span>
+</div>
+</div>
+<div class="h-4 w-full rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 80%;"></div>
+</div>
+</div>
+<div class="w-full aspect-video rounded-xl overflow-hidden shadow-lg border-4 border-white dark:border-slate-800">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" data-alt="A friendly cartoon lion in a lush green jungle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMx1sfBbW_d35xAH2MLIsazNbfPcbEXgKCbxdtEbMPuqkhA-P0y4pL3zHxvTZuGQMZJL8T4LWO4JqKjgsgX_C8EgjIwCbC3PWZEAeH4IzlpEMUTB6Msllrxu-3r7WsSqsS6WEz-VtLWp_cQAGe4q0QLUMHyK9WgHl0fUgN9QZut4GkjOqq0OFkVCm4yxd0yZwbRaI3DMJbeTrozinepzNMEq-wMGuXbFaN8jPucxCnZEJh3KqUCHje-iyN6hxHLxEzcq-keC-BySjN");'>
+</div>
+</div>
+<div class="bg-primary rounded-xl p-8 shadow-xl">
+<div class="flex flex-wrap gap-x-3 gap-y-4 justify-center text-center">
+<span class="text-white text-3xl font-bold opacity-100">The</span>
+<span class="text-white text-3xl font-bold opacity-100">brave</span>
+<span class="text-white text-3xl font-bold opacity-100">little</span>
+<!-- Active word highlighting -->
+<span class="bg-white text-primary px-3 py-1 rounded-lg text-4xl font-extrabold shadow-sm">lion</span>
+<span class="text-white text-3xl font-bold opacity-70">found</span>
+<span class="text-white text-3xl font-bold opacity-70">a</span>
+<span class="text-white text-3xl font-bold opacity-70">hidden</span>
+<span class="text-white text-3xl font-bold opacity-70">path</span>
+<span class="text-white text-3xl font-bold opacity-70">through</span>
+<span class="text-white text-3xl font-bold opacity-70">the</span>
+<span class="text-white text-3xl font-bold opacity-70">tall</span>
+<span class="text-white text-3xl font-bold opacity-70">green</span>
+<span class="text-white text-3xl font-bold opacity-70">grass.</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-auto pb-6">
+<button class="flex flex-col items-center justify-center gap-2 bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 p-6 rounded-xl active:scale-95 transition-transform">
+<span class="material-symbols-outlined !text-5xl">keyboard_arrow_left</span>
+<span class="font-bold text-lg">BACK</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 bg-primary text-white p-6 rounded-xl shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined !text-5xl">keyboard_arrow_right</span>
+<span class="font-bold text-lg">NEXT</span>
+</button>
+</div>
+</main>
+<nav class="sticky bottom-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-6 py-4">
+<div class="flex justify-around items-center">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined !text-3xl">home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined !text-3xl">menu_book</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined !text-3xl">stars</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined !text-3xl">person</span>
+</a>
+</div>
+</nav>
+</body></html>

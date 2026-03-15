@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Magic Learning Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Spline Sans", sans-serif;
+        }
+        .voice-wave {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .wave-bar {
+            width: 6px;
+            background-color: #4b8fe2;
+            border-radius: 999px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
+<!-- Top Navigation -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 justify-between">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-center bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-3xl">close</span>
+</div>
+<div class="flex-1 flex justify-center">
+<!-- Progress or Score indicator for kids -->
+<div class="bg-white dark:bg-slate-800 px-6 py-2 rounded-full shadow-sm flex items-center gap-2 border-2 border-primary/20">
+<span class="material-symbols-outlined text-yellow-500">stars</span>
+<span class="font-bold text-slate-900 dark:text-slate-100">0</span>
+</div>
+</div>
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-center bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-3xl">settings</span>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center justify-center p-4">
+<!-- Narrative Background (Hero Section) -->
+<div class="w-full max-w-2xl relative">
+<div class="aspect-[4/3] w-full rounded-xl overflow-hidden shadow-2xl relative bg-primary/5 border-4 border-white dark:border-slate-800">
+<!-- Background Image: Magical Forest -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Enchanted magical forest with glowing trees and path" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAH76PKBKPFYquu9WVwrr_MBTzlHklAOgkIUYBVunLIwwv76FOMVnsQbx0jqJ0TgPr4-eSjmkg-gn9lbvv8g5jFoHatWC2sY3h_msl72Q89JU0c4Uq5GXaZyfxe-3TURby72AgG4GiXYssEVcZTFbBnB0yyas3SpcuPxR8d41pzfHGCmPm2h1pQMpL_z0S2DNdlAI78LCQPrlotonnEWm6rCit5j0LXFkBYC_7QITR7pL6XZySYMGaL0F7D0uZgdbaXdmtGvBAKZrjY");'></div>
+<!-- Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<!-- Mentor Character (Bird/Creature) -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-64 h-64 bg-center bg-contain bg-no-repeat drop-shadow-2xl" data-alt="A friendly blue round bird character smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBEe8BXwxwjKN5nsiYM4OQ6Uloiygdz76yOQQ8td2_lioZuJ4QOsGp-FORq17AEElosrXPvCKZ3IEI3NrLPnSbjV6RuYkx_rsEMRywLF48l_CiwK3sX3lvf8Cm2tBXa0sPhmhTIEZNCHHAwxAtgnI7xv_Hf8vVjWBMy6jiKkBe6raRVDGTTvQBsqx62giGeJS2TlM53IsAEgMgDTjMTxRkz1Bgd8JV5tZUjRuyq3cuU9M9xS6ZYXVtXs4V3Pj9JO65pq5hYkpNIGz0M");'></div>
+</div>
+<!-- Voice Wave Indicator -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 bg-white/90 dark:bg-slate-900/90 backdrop-blur px-6 py-4 rounded-full flex items-center gap-4 shadow-xl border-2 border-primary">
+<span class="material-symbols-outlined text-primary text-3xl">graphic_eq</span>
+<div class="voice-wave h-8">
+<div class="wave-bar h-4"></div>
+<div class="wave-bar h-8"></div>
+<div class="wave-bar h-6"></div>
+<div class="wave-bar h-4"></div>
+<div class="wave-bar h-7"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action Section -->
+<div class="mt-12 flex flex-col items-center gap-8">
+<!-- Large "Start" Button (80pt height approx 106px) -->
+<button class="group relative flex h-28 w-28 md:h-32 md:w-32 items-center justify-center overflow-hidden rounded-full bg-primary text-white shadow-[0_12px_0_0_#3a70b1] active:shadow-none active:translate-y-2 transition-all">
+<span class="material-symbols-outlined text-7xl font-bold">play_arrow</span>
+</button>
+<!-- Secondary Visual Instruction -->
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center shadow-lg border-2 border-primary/30">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100 text-3xl">touch_app</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Area - Minimal and Playful -->
+<footer class="p-8 flex justify-between items-end">
+<div class="bg-primary/20 p-4 rounded-full text-primary">
+<span class="material-symbols-outlined text-4xl">volume_up</span>
+</div>
+<div class="flex gap-2">
+<div class="w-4 h-4 rounded-full bg-primary"></div>
+<div class="w-4 h-4 rounded-full bg-primary/30"></div>
+<div class="w-4 h-4 rounded-full bg-primary/30"></div>
+</div>
+<div class="bg-primary/20 p-4 rounded-full text-primary">
+<span class="material-symbols-outlined text-4xl">help</span>
+</div>
+</footer>
+</body></html>

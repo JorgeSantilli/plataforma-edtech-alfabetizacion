@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#4b8fe2",
+                "background-light": "#f6f7f8",
+                "background-dark": "#121820",
+              },
+              fontFamily: {
+                "display": ["Spline Sans"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>
+        .cursive-letter {
+            font-family: 'Brush Script MT', 'Dancing Script', cursive;
+            font-size: 15rem;
+            line-height: 1;
+        }
+        /* Custom trace line effect simulation */
+        .trace-path {
+            stroke-dasharray: 10;
+            animation: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header / Progress Area -->
+<header class="w-full p-4 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<button class="flex items-center justify-center size-12 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex flex-col items-center">
+<h2 class="text-lg font-bold">Trazado de Letras</h2>
+<span class="text-xs font-medium text-slate-500 uppercase tracking-widest">Psicomotricidad Fina</span>
+</div>
+<button class="flex items-center justify-center size-12 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 text-primary">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+<div class="flex flex-col gap-2 px-2">
+<div class="flex justify-between items-end">
+<p class="text-sm font-semibold">Tu progreso hoy</p>
+<p class="text-xs font-bold text-primary">60% completado</p>
+</div>
+<div class="h-3 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/5 rounded-full"></div>
+</div>
+</div>
+</header>
+<!-- Main Interaction Area -->
+<main class="flex-1 flex flex-col items-center justify-center p-6 relative">
+<!-- Instruction Text -->
+<div class="mb-8 text-center">
+<h1 class="text-3xl font-bold mb-2">Traza la letra <span class="text-primary italic">"A"</span></h1>
+<p class="text-slate-500 dark:text-slate-400">Sigue las flechas con tu dedo suavemente</p>
+</div>
+<!-- Tracing Canvas Container -->
+<div class="relative w-full max-w-sm aspect-square bg-white dark:bg-slate-800 rounded-xl shadow-xl border-4 border-dashed border-primary/20 flex items-center justify-center overflow-hidden">
+<!-- Background Letter (Guide) -->
+<div class="absolute inset-0 flex items-center justify-center select-none pointer-events-none opacity-10 dark:opacity-20">
+<span class="cursive-letter text-slate-900 dark:text-white">A</span>
+</div>
+<!-- The Letter to Trace -->
+<div class="relative z-10 flex items-center justify-center">
+<svg class="drop-shadow-sm" height="300" viewbox="0 0 200 200" width="300">
+<!-- Path guide -->
+<path class="text-slate-200 dark:text-slate-700" d="M100,40 C120,40 160,80 160,120 C160,160 120,170 100,170 C80,170 40,160 40,120 C40,80 80,40 100,40 Z M100,170 L140,170" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="12"></path>
+<!-- Trace feedback (stars/particles simulation) -->
+<circle class="animate-pulse" cx="100" cy="40" fill="#4b8fe2" r="8"></circle>
+<!-- Directional Arrows -->
+<g fill="#4b8fe2">
+<path d="M115,45 L125,55 L115,65" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+<path d="M145,150 L155,160 L145,170" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+</g>
+</svg>
+<!-- Visual Feedback elements (absolute positioned stars) -->
+<div class="absolute top-1/4 right-1/4 text-yellow-400">
+<span class="material-symbols-outlined text-3xl">star</span>
+</div>
+<div class="absolute bottom-1/3 left-1/4 text-yellow-400 opacity-50">
+<span class="material-symbols-outlined text-xl">auto_awesome</span>
+</div>
+</div>
+<!-- Auditivo Feedback Toggle (Floating) -->
+<div class="absolute top-4 right-4">
+<div class="bg-primary/10 p-2 rounded-full text-primary">
+<span class="material-symbols-outlined">volume_up</span>
+</div>
+</div>
+</div>
+<!-- Feedback Message (Appears on correct movement) -->
+<div class="mt-8 flex items-center gap-2 text-primary font-bold animate-bounce">
+<span class="material-symbols-outlined">sentiment_very_satisfied</span>
+<span>¡Muy bien! ¡Sigue así!</span>
+</div>
+</main>
+<!-- Footer Controls -->
+<footer class="p-6 flex flex-col gap-4 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+<div class="flex gap-4">
+<button class="flex-1 py-4 px-6 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-bold text-slate-600 dark:text-slate-300 flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">undo</span>
+                Volver
+            </button>
+<button class="flex-[2] py-4 px-6 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/30 flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+                Siguiente
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</footer>
+<!-- Bottom Navigation Component -->
+<nav class="flex gap-2 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pb-6 pt-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">home</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">star</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</nav>
+</body></html>

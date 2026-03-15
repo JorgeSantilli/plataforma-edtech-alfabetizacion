@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kids Reading Adventure</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation & Progress -->
+<header class="w-full max-w-6xl mx-auto px-6 py-6 flex flex-col gap-6">
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-2 rounded-full text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">auto_stories</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">Aventura de Lectura</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 bg-primary/10 dark:bg-primary/20 px-4 py-2 rounded-full border border-primary/20">
+<span class="material-symbols-outlined text-primary fill-1">stars</span>
+<span class="font-bold text-primary">1,250 XP</span>
+</div>
+<div class="size-12 rounded-full bg-slate-200 dark:bg-slate-800 border-2 border-primary/30 overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Cartoon avatar of a smiling child" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGesbKBHUyaLB0W2ZMCgOFzTjax1D2ieeD8mH292pCOQM6zhgCkzD7agecd6RozdYH_zRxdQtyX2qhp3ugnTPA_z0vceK2ZOq4Tod3AGle5siacM5BmsB1U49jW6fG-yqH9j89b6ZBKqUPgOEkih9-KWUYqlSKLNNuoDrRgN0wFf0b53-N5D0sMUiKCul2wi0XQiO__ZAZ_MYkct25Q44kFQ9rY4TSlLlVl6b-PMN_laWnoD7R_6EUCiMYmdIxFf1__OBvLZjcMGOm"/>
+</div>
+</div>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-6 rounded-full relative p-1 overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500 flex items-center justify-end px-2" style="width: 65%;">
+<span class="text-[10px] text-white font-bold">65%</span>
+</div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 mr-2 flex items-center justify-center bg-yellow-400 size-8 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-white text-lg">trophy</span>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col items-center justify-center max-w-7xl mx-auto w-full px-6 py-4">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
+<!-- Large Side Controls (Desktop) -->
+<div class="hidden lg:flex lg:col-span-1 justify-start">
+<button class="size-16 rounded-full bg-white dark:bg-slate-800 shadow-xl flex items-center justify-center text-slate-400 hover:text-primary hover:scale-110 transition-all border border-slate-100 dark:border-slate-700">
+<span class="material-symbols-outlined text-4xl">arrow_back_ios_new</span>
+</button>
+</div>
+<!-- Main Illustration & Text -->
+<div class="lg:col-span-10 flex flex-col items-center gap-10">
+<div class="w-full max-w-4xl aspect-[16/9] rounded-xl overflow-hidden shadow-2xl bg-white dark:bg-slate-800 p-4 border-4 border-white dark:border-slate-700">
+<div class="w-full h-full rounded bg-center bg-no-repeat bg-cover" data-alt="Illustration of a cute fox in a colorful forest" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAW2A7HHICj_1emK2LhkyPhOUURm2tp9RHVAJxeBltgT6754wulYBlob9a06Yxk1j4e655NLsgXcaTm0vfCVuqled2zM-UjFUhox2BH9LlhGJX64qK4AzG3W143GG1iUn10Gz-u6C94zpEON7uzKrAeWLmMQq6HNMcizWzjHNSCCshSwM9V-qhlcXYkCP7pzVdoRP88qVmBqTLfTwGRjzztpiep6AOkQ1RC9AZmhpQK65pNC8RO043PHTowukTw2uyZwVuBrPnKmkhh');">
+</div>
+</div>
+<div class="max-w-3xl text-center">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-800 dark:text-slate-100 selection:bg-primary/30">El rápido zorro marrón salta <span class="text-primary underline decoration-primary/30">sobre</span> el perro perezoso.</h1>
+</div>
+<!-- Mobile Controls (visible on small screens) -->
+<div class="flex lg:hidden gap-6 w-full max-w-md px-4 py-8">
+<button class="flex-1 h-16 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold text-xl flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">arrow_back</span>
+                            BACK
+                        </button>
+<button class="flex-1 h-16 rounded-full bg-primary text-white font-bold text-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/40">
+                            NEXT
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Large Side Controls (Desktop) -->
+<div class="hidden lg:flex lg:col-span-1 justify-end">
+<button class="size-16 rounded-full bg-primary shadow-xl shadow-primary/30 flex items-center justify-center text-white hover:scale-110 transition-all">
+<span class="material-symbols-outlined text-4xl">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Desktop Navigation -->
+<footer class="w-full max-w-6xl mx-auto px-6 py-12 hidden lg:flex items-center justify-between border-t border-slate-200 dark:border-slate-800">
+<div class="flex gap-4">
+<button class="px-8 py-4 rounded-full bg-slate-200 dark:bg-slate-800 font-bold text-lg flex items-center gap-2 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"><span class="material-symbols-outlined">volume_up</span> ESCUCHAR</button>
+<button class="px-8 py-4 rounded-full bg-slate-200 dark:bg-slate-800 font-bold text-lg flex items-center gap-2 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors"><span class="material-symbols-outlined">translate</span> TRADUCIR</button>
+</div>
+<div class="flex gap-4">
+<button class="px-10 py-4 rounded-full bg-primary text-white font-bold text-lg flex items-center gap-2 shadow-lg shadow-primary/20 hover:bg-primary/90 transition-colors"><span class="material-symbols-outlined">check_circle</span> MARCAR COMO LEÍDO</button>
+</div>
+</footer>
+</div>
+</body></html>

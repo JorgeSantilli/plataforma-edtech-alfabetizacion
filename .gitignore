@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# setup scripts
+brute_pooler.js
+run_schema.js
+test_mcp.js
+.gemini/
+task.md
+implementation_plan.md
+walkthrough.md

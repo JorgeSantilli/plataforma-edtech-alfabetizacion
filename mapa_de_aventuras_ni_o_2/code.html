@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kids Literacy Adventure Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between px-6 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md z-10 border-b border-primary/10">
+<button class="flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary transition-transform active:scale-90">
+<span class="material-symbols-outlined text-3xl">home</span>
+</button>
+<div class="flex flex-col items-center">
+<h1 class="text-xl font-bold tracking-tight text-primary">Isla de las Palabras</h1>
+<div class="flex items-center gap-1 bg-yellow-400/20 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1">stars</span>
+<span class="text-sm font-bold text-yellow-700 dark:text-yellow-400">1,240</span>
+</div>
+</div>
+<button class="flex size-12 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 active:scale-90">
+<span class="material-symbols-outlined text-2xl">person</span>
+</button>
+</header>
+<!-- Scrollable Adventure Map -->
+<main class="flex-1 overflow-y-auto no-scrollbar relative bg-sky-50 dark:bg-slate-900">
+<!-- Map Background Layer (Abstract representation of a path) -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<svg height="200%" preserveaspectratio="none" viewbox="0 0 100 200" width="100%">
+<path d="M 50 0 Q 80 50 50 100 T 50 200" fill="none" stroke="#4b8fe2" stroke-dasharray="8 8" stroke-width="2"></path>
+</svg>
+</div>
+<div class="relative z-10 flex flex-col items-center py-12 gap-24">
+<!-- Level 4: Writing (Locked) -->
+<div class="relative group">
+<div class="relative w-48 h-48 rounded-full bg-slate-300 dark:bg-slate-700 flex items-center justify-center overflow-hidden border-4 border-slate-400 grayscale">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Cartoon snowy mountain peak literacy level" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCTV_By-HfkwGKDQZu_Ry0nLKB7WemvzigaFSnqksc1u8yhZBcKapXfS7PpVeCe7qsddd_FzYdg2wICQypNBklBKeeqpWgTccacqlgqgTG5T4D8C77plvC-_nQgzdqc1LQeAKNIkVLbMtMLGl0J0Iwavv2ocOq4TmxzNW3cn3I8ae15GYxwIq2-BrkLe0xU1MbllKfcc3Rnc70geTbetom3jUu7PNrN82viR_TZFotsmA-Ew-pdDs3UG7iZ3PImDpJVWc4RMHFGxmX8');"></div>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl">lock</span>
+</div>
+</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 px-6 py-2 rounded-full shadow-md border-2 border-slate-200 dark:border-slate-700">
+<p class="font-bold text-slate-500 whitespace-nowrap text-lg">Pico de Escritura</p>
+</div>
+</div>
+<!-- Level 3: Grammar (Next Up) -->
+<div class="relative">
+<div class="absolute -top-4 -right-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-bold animate-bounce">¡NUEVO!</div>
+<div class="w-56 h-56 rounded-full bg-primary/20 p-2 border-4 border-dashed border-primary">
+<div class="w-full h-full rounded-full bg-white dark:bg-slate-800 shadow-xl overflow-hidden flex items-center justify-center relative cursor-pointer active:scale-95 transition-transform">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Enchanted forest library landscape" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrpX9ogJtlinxC_a54jwr0_RvOKXNWLlG4P8TySuA9sKpcQTbpQnCQqGbr9C0Z9zRwFqxu7KgBhkrHJy5owgkO0OkjtZtt3C86ZO1iQIYqjJEje--v5P-fj_-5PYN_XaXqtX9C2eBuadRMz83jqrvnbDsKhl9oHWe-Of5ctZA9erqtaMo7qHJxDgpUQ4IdRedw8EONv6UivaDxX2otcVWSK4f5WInDZXJRP2oJOgSoWL9PD0S4I8YHxrTsgqu8n6c8XfvpQJJThwKf');"></div>
+<span class="material-symbols-outlined text-primary text-6xl relative z-10">play_circle</span>
+</div>
+</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-primary text-white px-8 py-3 rounded-full shadow-lg shadow-primary/40">
+<p class="font-bold whitespace-nowrap text-xl">Arboleda Gramatical</p>
+</div>
+</div>
+<!-- Level 2: Sight Words (Completed) -->
+<div class="relative">
+<div class="w-48 h-48 rounded-full bg-green-100 dark:bg-green-900/30 p-1 border-4 border-green-400">
+<div class="w-full h-full rounded-full overflow-hidden flex items-center justify-center relative shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Tropical sunny beach island illustration" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGwzY_gkACnchObdx_c4mH9gHVbeaBwiLW0fRP4DhRwq_f4_FxFO-2fmLo2RZGDxLkLjgklyRntBABCmjeetsG7LHtNyeJbu3kktThoC-sh99jEBY5L-4fyVyY55o-rvacvv7ns6VwEGqeSjW5cPPseO5wxNsA3E-xPObjSu1-71CCnilOsDhdZQiQkZHKUz1PNmaE4EZnbK1WRP3aaikT0oIkI0SrxhvUwpbnTGnvOTUQW1G9DI4LQqOhN3gthKhFZIYIGOVY3kY7');"></div>
+<div class="absolute inset-0 bg-green-500/20"></div>
+<span class="material-symbols-outlined text-green-500 text-6xl relative z-10" style="font-variation-settings: 'FILL' 1">check_circle</span>
+</div>
+</div>
+<!-- Stars earned -->
+<div class="flex gap-1 absolute -top-4 left-1/2 -translate-x-1/2">
+<span class="material-symbols-outlined text-yellow-400 drop-shadow-md" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-yellow-400 drop-shadow-md" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-yellow-400 drop-shadow-md" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 px-6 py-2 rounded-full shadow-md border-2 border-green-100">
+<p class="font-bold text-slate-800 dark:text-slate-100 whitespace-nowrap text-lg">Sight Word Sands</p>
+</div>
+</div>
+<!-- Level 1: Phonics (Completed) -->
+<div class="relative">
+<div class="w-40 h-40 rounded-full bg-green-100 dark:bg-green-900/30 p-1 border-4 border-green-400">
+<div class="w-full h-full rounded-full overflow-hidden flex items-center justify-center relative shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Lush green jungle literacy level" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBq0a7nJU8wAjtjzhu5W1mQAS_lgR0bb3QdcaVjOMB9aGNdqlJnJX1x_CmVKFzyitDTC2CG1EELjmG1xrbfOcBiKhxkk0dLiN_xmTCZrEgyayjXaEYCl7VMokJ0BTHsBHgfuTRxwlDPi6W-HywbZFSIJIE-68Qg-OKZFA1-SMH_Qdupk0C2huW2fwhEeS-8cHtogul6cQfFWQAbDD-dhZQOKwwVelGp-bNJnuAcwOed7tn2ofGwk86Nj3vW7B5JnxbqrffNR0SzPqS4');"></div>
+<div class="absolute inset-0 bg-green-500/20"></div>
+<span class="material-symbols-outlined text-green-500 text-5xl relative z-10" style="font-variation-settings: 'FILL' 1">check_circle</span>
+</div>
+</div>
+<div class="flex gap-1 absolute -top-4 left-1/2 -translate-x-1/2">
+<span class="material-symbols-outlined text-yellow-400 drop-shadow-md" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-yellow-400 drop-shadow-md" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="material-symbols-outlined text-slate-300 dark:text-slate-600 drop-shadow-md" style="font-variation-settings: 'FILL' 1">star</span>
+</div>
+<div class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 px-6 py-2 rounded-full shadow-md border-2 border-green-100">
+<p class="font-bold text-slate-800 dark:text-slate-100 whitespace-nowrap text-lg">Phonics Jungle</p>
+</div>
+</div>
+<div class="h-24"></div> <!-- Spacer for footer -->
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="flex h-20 items-center justify-around border-t border-primary/10 bg-white dark:bg-background-dark px-6 py-2">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1">map</span>
+<span class="text-xs font-bold uppercase tracking-wider">MAPA</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-3xl">book_5</span>
+<span class="text-xs font-bold uppercase tracking-wider">BIBLIOTECA</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-3xl">backpack</span>
+<span class="text-xs font-bold uppercase tracking-wider">MOCHILA</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-3xl">emoji_events</span>
+<span class="text-xs font-bold uppercase tracking-wider">PREMIOS</span>
+</a>
+</nav>
+<!-- Floating Action Button for Map Toggle (Optional) -->
+<div class="absolute bottom-24 right-6 flex flex-col gap-3">
+<button class="flex size-14 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-primary shadow-xl border-2 border-primary/10 active:scale-95">
+<span class="material-symbols-outlined text-3xl">my_location</span>
+</button>
+</div>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

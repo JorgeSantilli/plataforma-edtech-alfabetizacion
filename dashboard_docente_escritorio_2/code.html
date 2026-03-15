@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Teacher Dashboard</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 py-3 bg-white dark:bg-slate-900 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">school</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">EduPulse Dashboard</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full">
+<div class="text-slate-500 flex border-none bg-primary/10 items-center justify-center pl-4 rounded-l-full">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-full text-slate-900 focus:outline-0 focus:ring-0 border-none bg-primary/10 placeholder:text-slate-500 px-4 pl-2 text-base font-normal" placeholder="Buscar alumnos o materia" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-primary text-sm font-semibold border-b-2 border-primary pb-1" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary" href="#">Classes</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary" href="#">Curriculum</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary" href="#">Reports</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-full size-10 bg-primary/10 text-slate-700 dark:text-slate-300 hover:bg-primary/20">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-full size-10 bg-primary/10 text-slate-700 dark:text-slate-300 hover:bg-primary/20">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="Female teacher profile avatar photo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHtvq4cKs_W1fckOAw-UrCFVDa_8lfI6if3tvoGLOPRcs1LXqQm_y61jMAoRmwhnRk3AmXESQXa_N_B541x9Gj1ImfNR9PwsvsXYlE9kJzYhM3bV1oorpI3nFiBld1Vihv9_DuAA9tQqwu-1HBpqP1bmtBXSyAakp0FzOL6LGNIeYR2O9SXNwrqjs2vUY8763ngy-efzQo6WuP6YKaOiY-Is8q5lciC5-UTrIqKaDzlN5Y2PVyHR9OOVb-i00TP0MPH_z96vSNOUZE");'></div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="flex flex-1 p-6 gap-6">
+<!-- Left Sidebar: Navigation & Recent Insights -->
+<aside class="w-64 flex flex-col gap-6 shrink-0">
+<div class="flex flex-col gap-2 bg-white dark:bg-slate-900 p-4 rounded-xl border border-primary/10">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider px-3 mb-2">MENÚ PRINCIPAL</p>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-full bg-primary text-white" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-semibold">Resumen</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-full text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary" href="#">
+<span class="material-symbols-outlined">cast_for_education</span>
+<span class="text-sm font-medium">Clase en Vivo</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-full text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-sm font-medium">Planificador</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-full text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="text-sm font-medium">Insights</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-full text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-sm font-medium">Recursos</span>
+</a>
+</div>
+<div class="flex flex-col gap-4 bg-white dark:bg-slate-900 p-5 rounded-xl border border-primary/10">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-bold">Estado del Aula en Vivo</h3>
+<div class="space-y-4">
+<div class="flex gap-3">
+<div class="size-2 rounded-full bg-yellow-400 mt-1.5 shrink-0"></div>
+<p class="text-xs text-slate-600 dark:text-slate-400 font-medium">3 students are struggling with Blending today.</p>
+</div>
+<div class="flex gap-3">
+<div class="size-2 rounded-full bg-green-500 mt-1.5 shrink-0"></div>
+<p class="text-xs text-slate-600 dark:text-slate-400 font-medium">Alex J. completed 5 extra practice sessions.</p>
+</div>
+<div class="flex gap-3">
+<div class="size-2 rounded-full bg-primary mt-1.5 shrink-0"></div>
+<p class="text-xs text-slate-600 dark:text-slate-400 font-medium">Weekly class proficiency increased by 2.1%.</p>
+</div>
+</div>
+<button class="mt-2 text-primary text-xs font-bold hover:underline text-left">Ver Cuadrícula de Pantallas en Vivo</button>
+</div>
+</aside>
+<!-- Center Content: Stats & Heatmap -->
+<div class="flex-1 flex flex-col gap-6">
+<!-- Top Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-primary/10 shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Competencia de Clase</p>
+<span class="material-symbols-outlined text-primary bg-primary/10 rounded-full p-1 text-lg">verified</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-3xl font-bold">78.4%</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-green-500 text-sm font-bold">trending_up</span>
+<p class="text-green-600 dark:text-green-400 text-xs font-bold">+2.1% vs last week</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-primary/10 shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Práctica Diaria Promedio</p>
+<span class="material-symbols-outlined text-primary bg-primary/10 rounded-full p-1 text-lg">timer</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-3xl font-bold">22m</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-red-500 text-sm font-bold">trending_down</span>
+<p class="text-red-600 dark:text-red-400 text-xs font-bold">-5% vs yesterday</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-primary/10 shadow-sm">
+<div class="flex items-center justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Intervenciones Necesarias</p>
+<span class="material-symbols-outlined text-primary bg-primary/10 rounded-full p-1 text-lg">warning</span>
+</div>
+<p class="text-slate-900 dark:text-slate-100 text-3xl font-bold">04</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-green-500 text-sm font-bold">check_circle</span>
+<p class="text-green-600 dark:text-green-400 text-xs font-bold">-1 desde ayer</p>
+</div>
+</div>
+</div>
+<!-- Phonological Awareness Heatmap -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold tracking-tight">Mapa de Calor de Conciencia Fonológica</h2>
+<button class="flex items-center gap-2 text-primary text-sm font-bold border border-primary px-4 py-2 rounded-full hover:bg-primary/5"><span class="material-symbols-outlined text-lg">download</span> Exportar CSV</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-primary/10">
+<th class="pb-3 text-slate-500 dark:text-slate-400 font-semibold text-sm">Estudiante</th>
+<th class="pb-3 text-slate-500 dark:text-slate-400 font-semibold text-sm text-center">Aislamiento de fonemas</th>
+<th class="pb-3 text-slate-500 dark:text-slate-400 font-semibold text-sm text-center">Combinación</th>
+<th class="pb-3 text-slate-500 dark:text-slate-400 font-semibold text-sm text-center">Segmentación</th>
+<th class="pb-3 text-slate-500 dark:text-slate-400 font-semibold text-sm text-center">Sustitución</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/5">
+<tr class="group hover:bg-primary/5">
+<td class="py-4 text-sm font-semibold text-slate-700 dark:text-slate-300">Alex J.</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">Alto</div>
+</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-bold">Medio</div>
+</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold">Bajo</div>
+</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-bold">Medio</div>
+</td>
+</tr>
+<tr class="group hover:bg-primary/5">
+<td class="py-4 text-sm font-semibold text-slate-700 dark:text-slate-300">Sam R.</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-bold">Medio</div>
+</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">Alto</div>
+</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">Alto</div>
+</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">Alto</div>
+</td>
+</tr>
+<tr class="group hover:bg-primary/5">
+<td class="py-4 text-sm font-semibold text-slate-700 dark:text-slate-300">Jordan K.</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold">Bajo</div>
+</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold">Bajo</div>
+</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-bold">Medio</div>
+</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold">Bajo</div>
+</td>
+</tr>
+<tr class="group hover:bg-primary/5">
+<td class="py-4 text-sm font-semibold text-slate-700 dark:text-slate-300">Taylor W.</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">Alto</div>
+</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">Alto</div>
+</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">Alto</div>
+</td>
+<td class="py-4 px-2 text-center">
+<div class="mx-auto w-20 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-bold">Medio</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Live Status & AI Assistant -->
+<aside class="w-80 flex flex-col gap-6 shrink-0">
+<!-- AI Assistant Section -->
+<div class="bg-gradient-to-br from-primary to-primary/80 p-6 rounded-xl text-white shadow-lg relative overflow-hidden group">
+<div class="relative z-10 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white text-3xl">smart_toy</span>
+<h3 class="text-lg font-bold">Asistente de Lecciones IA</h3>
+</div>
+<p class="text-sm text-primary-100 leading-relaxed">¿Listo para optimizar tu clase? Puedo generar un plan de lección personalizado basado en los mapas de calor actuales de los estudiantes.</p>
+<button class="flex items-center justify-center gap-2 bg-white text-primary rounded-full py-2.5 px-4 font-bold text-sm hover:bg-background-light transition-colors"><span class="material-symbols-outlined text-lg">auto_awesome</span> Generar Plan de Lección</button>
+</div>
+<div class="absolute -bottom-4 -right-4 text-white opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[100px]">auto_stories</span>
+</div>
+</div>
+<!-- Live Classroom Status List -->
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-primary/10 shadow-sm flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<h3 class="text-slate-900 dark:text-slate-100 text-sm font-bold">Estado del Aula en Vivo</h3>
+<div class="size-2.5 rounded-full bg-red-500 animate-pulse"></div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 p-3 rounded-xl border border-primary/5 bg-primary/5">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Male student Alex J. profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDaXdcT_hq4cwjgovvSdP5t1v8bxqnEFygLTW0XZFIEAWJPKlPf4B8xp1t2zdj9itYNlkGhZQOdadCMC8GwfMfBlFq5v8RP040KvzClJyCdrhVyiY5-TLmWMRpG2NqzVkGxdI6pOhCDahRoOAJnZDAa75u43LnIn9HYBsFUP2jNKuj1Ok-3FGE7G5LQ5A0RS6Br-1Av-nx37AefNP1xZNjMpc6ds_eBuV2vJEIAotcjB8kc1O0ZqMH8eEK0b9AwjZGQnLojTwyCTKVU");'></div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold text-slate-800 dark:text-slate-200 truncate">Alex J.</p>
+<p class="text-[10px] text-primary font-medium">Solving Quiz 4.2</p>
+</div>
+<span class="text-[10px] text-slate-400 font-medium">2m ago</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl border border-primary/5 hover:bg-primary/5 transition-colors">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Female student Sam R. profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDQsJbQibnYOu0nmT3rIuAcWdlsew33Z9OWYDTWY92taCKXr_cjBCrfHY6n5ca21nIlUUD0CeLajtS3-WZjYg5dX0YGd3mgnn6hI9gh655k9CW2abYNDkt81sZfkKVtmpM2Q-4nVcjhJC_nK_pLL6P9PQ3QOmw-94nW27g-nJAhsIGNUdK5bsdjqE00BdMiKKu3l7DvpIAg01_jWALYO6jmyQl63O6VHrKb_egiBmOMWYRLQnzI-mzmQmM6LX2LfVzWz5eh8164f-tY");'></div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold text-slate-800 dark:text-slate-200 truncate">Sam R.</p>
+<p class="text-[10px] text-slate-500 font-medium">Idle - Video lesson</p>
+</div>
+<span class="text-[10px] text-slate-400 font-medium">5m ago</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-xl border border-primary/5 hover:bg-primary/5 transition-colors">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-8" data-alt="Male student Jordan K. profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCU5QmWnA_0Ox84EIWGawHWBHafK19_ewfGNjdlRL69xF1LV_XR3w781U9Sr7f11eaJSv9IjkKdgEk_qr_vSNCL7HrUx-0RvnmzwPHVtDFzK81ZLJYXOb33Nfga3ZGbuaP8AeRVmbUKiY742bt-c3VDJTA5I0TvtFoTEjhAAaGThH3EdDMSKEB6OnclmPxTdWrjOAvFTE5UUFn1BwtLIm2DHZVbxq3MTDf0_xNpnygArj1g9Wh7TKZS1XFFngCjmmtXT0HzaVxAvk-3");'></div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold text-slate-800 dark:text-slate-200 truncate">Jordan K.</p>
+<p class="text-[10px] text-slate-500 font-medium">Browsing Resources</p>
+</div>
+<span class="text-[10px] text-slate-400 font-medium">Just now</span>
+</div>
+</div>
+<button class="w-full py-2 bg-primary/10 text-primary text-xs font-bold rounded-full hover:bg-primary/20 transition-colors">Ver Cuadrícula de Pantallas en Vivo</button>
+</div>
+</aside>
+</main>
+</div>
+</div>
+</body></html>

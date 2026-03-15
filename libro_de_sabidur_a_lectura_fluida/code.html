@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Spline Sans', sans-serif; }
+        .highlight-word {
+            background-color: rgba(75, 143, 226, 0.2);
+            border-bottom: 2px solid #4b8fe2;
+            border-radius: 0.25rem;
+            padding: 0 2px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+<!-- Header -->
+<header class="flex items-center justify-between p-4 bg-background-light dark:bg-background-dark sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Libro de Sabiduría</h1>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">settings</span>
+</button>
+</header>
+<main class="flex-1 flex flex-col max-w-2xl mx-auto w-full p-4 gap-6">
+<!-- Mentor Avatar Section -->
+<section class="flex flex-col items-center gap-4 py-4">
+<div class="relative">
+<div class="size-32 rounded-full border-4 border-primary/30 p-1">
+<div class="size-full rounded-full bg-cover bg-center" data-alt="Wise elderly mentor with a friendly expression" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9qsWkx-1umn0sEqlt7XuRosnp1vL1JKUddVpPSsxx4j2nUA6z95Ax1JeCbJaZQPPovp9LBGPreJEVDcNXCdpEwaoAEP4RlkBq3eQok_FuGTjGa3v-TsgvWD5stMzNAeTbVmwI3KbaW2niG_2P0jn2VJ0j2k9bW6rmB48T2z2rqu3eiCvQae63AMSmrP-hF4KpSvL4p6yhpDjiuioKyOcTJbtXLt2qdBhA5N12yvnA8DPhloPZ74GHIfbcTywXDP_-ZBIJ0srLrneo')">
+</div>
+</div>
+<div class="absolute -bottom-2 right-0 bg-primary text-white p-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-xl">volume_up</span>
+</div>
+</div>
+<div class="text-center">
+<h2 class="text-xl font-bold text-primary">Mentor Sabio</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400">Leyendo en voz alta...</p>
+</div>
+</section>
+<!-- Reading Progress Card -->
+<section class="bg-white dark:bg-slate-800/50 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm font-medium text-slate-600 dark:text-slate-400">Progreso del capítulo</span>
+<span class="text-sm font-bold text-primary">45%</span>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full transition-all duration-500" style="width: 45%;"></div>
+</div>
+</section>
+<!-- Main Content Text -->
+<article class="flex-1 flex flex-col justify-center">
+<div class="text-[18px] leading-relaxed text-slate-800 dark:text-slate-200 space-y-4 px-2">
+<p>
+<span class="highlight-word">Los</span> <span class="highlight-word">árboles</span> son los pulmones del planeta. A través de la fotosíntesis, transforman el dióxido de carbono en oxígeno, permitiendo la vida de miles de especies. 
+                </p>
+<p>
+                    Sus raíces se entrelazan bajo tierra, creando una red de comunicación y apoyo mutuo que sostiene el ecosistema forestal. Sin ellos, el equilibrio de la naturaleza se vería gravemente afectado.
+                </p>
+</div>
+</article>
+<!-- Reading Controls -->
+<section class="grid grid-cols-2 gap-4 pb-8">
+<button class="flex flex-col items-center justify-center gap-2 p-6 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all border-b-4 border-slate-300 dark:border-slate-900 active:border-b-0 active:translate-y-1">
+<span class="material-symbols-outlined text-4xl">replay</span>
+<span class="font-bold uppercase tracking-wider text-xs">Repetir</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 p-6 rounded-2xl bg-primary text-white hover:opacity-90 transition-all border-b-4 border-blue-700 active:border-b-0 active:translate-y-1">
+<span class="material-symbols-outlined text-4xl">arrow_forward</span>
+<span class="font-bold uppercase tracking-wider text-xs">Siguiente</span>
+</button>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-4 pb-6 pt-2 flex justify-around items-center">
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">library_books</span>
+<p class="text-[10px] font-medium uppercase tracking-widest">Biblioteca</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-fill" style="font-variation-settings: 'FILL' 1">play_circle</span>
+<p class="text-[10px] font-bold uppercase tracking-widest">Lectura</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-medium uppercase tracking-widest">Perfil</p>
+</a>
+</nav>
+</body></html>

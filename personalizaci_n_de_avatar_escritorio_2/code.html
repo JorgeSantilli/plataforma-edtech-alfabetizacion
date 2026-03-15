@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Avatar Customizer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-10 py-4">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined text-4xl">face_6</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">Editor de Avatar</h2>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-full h-11 px-6 bg-primary/10 text-primary text-sm font-bold hover:bg-primary/20 transition-colors">
+<span class="truncate">Guardar Borrador</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="User profile circular avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmHeFLx9FzAoKDpIPRViOdTILR7-psqTvYxG41mmv2CyUdi2fvwRUHJkpB9v0hzQmfA3QN3yMumyRME_t62etsKRGOX4_2sJAsz_1dXi46E1ffZ-9iCZrk2JShVcLNx2FPgwW5yszWKKzEyCmFy1Ckn9njlPhU87FwRN48c_wGxqrHCRNaMzt-2H528aMDC9GeyFEifKSk3MunMn5DQyxRBN7BTpTU5R5oJ_RkeCxQVMWD7o8OKRhlqyaEnR9j3pniMpDC7V0T6_Zc");'></div>
+</div>
+</header>
+<main class="flex-1 flex flex-col max-w-[1200px] mx-auto w-full px-6 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Section: Avatar Preview -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="relative w-full aspect-square lg:aspect-auto lg:h-[600px] bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 flex items-center justify-center overflow-hidden">
+<!-- Preview Background Pattern -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, #4b8fe2 1px, transparent 0); background-size: 24px 24px;"></div>
+<!-- Main Character Preview -->
+<div class="relative z-10 w-3/4 h-3/4 bg-center bg-no-repeat bg-contain" data-alt="Large preview of a cute blue bird avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVraPiyWL_3ZpaKNBf2jcCSpHnsjuW_wGxDvUWIYQVUcbj-qDDOLgG9bGj3Q1gcRdateuetXA5B0A-ODxFktjC8YvkZoumW-1X0PjH2z8wfaDrmy3mZHdJI5wcxywda2YJjSz6WbOVTOb9OzYt52ANa3Aygu0nPJca37ZHz4yhS2p7G_GdYLJWJSwglwij87SfS9brFW7o0hIUwaB7HyRk4IyYGrIPRRorr02y76pCM8_H3Fpf7h7i08cwRAIAOFb6L6p1fG9W5umy");'>
+</div>
+<!-- Controls for Preview -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+<button class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">rotate_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Section: Selection & Tabs -->
+<div class="lg:col-span-5 flex flex-col bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+<!-- Tabs -->
+<div class="flex border-b border-slate-200 dark:border-slate-800 px-2 overflow-x-auto scrollbar-hide">
+<button class="flex-1 flex flex-col items-center justify-center border-b-4 border-primary text-primary px-4 py-4 min-w-[80px]">
+<span class="material-symbols-outlined mb-1">comedy_mask</span>
+<span class="text-xs font-bold uppercase tracking-wider">GORROS</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center border-b-4 border-transparent text-slate-500 hover:text-primary px-4 py-4 min-w-[80px]">
+<span class="material-symbols-outlined mb-1">eyeglasses</span>
+<span class="text-xs font-bold uppercase tracking-wider">LENTES</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center border-b-4 border-transparent text-slate-500 hover:text-primary px-4 py-4 min-w-[80px]">
+<span class="material-symbols-outlined mb-1">palette</span>
+<span class="text-xs font-bold uppercase tracking-wider">COLORES</span>
+</button>
+<button class="flex-1 flex flex-col items-center justify-center border-b-4 border-transparent text-slate-500 hover:text-primary px-4 py-4 min-w-[80px]">
+<span class="material-symbols-outlined mb-1">pets</span>
+<span class="text-xs font-bold uppercase tracking-wider">MASCOTAS</span>
+</button>
+</div>
+<!-- Item Grid -->
+<div class="flex-1 overflow-y-auto p-6 max-h-[500px]">
+<div class="grid grid-cols-3 gap-4">
+<!-- Active Item -->
+<div class="group relative aspect-square rounded-xl bg-primary/10 border-2 border-primary cursor-pointer flex items-center justify-center overflow-hidden">
+<div class="w-16 h-16 bg-center bg-no-repeat bg-contain" data-alt="Red cap accessory icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBW-DgYNu8Ge8A-Mx0iKfFwu37VWEDJxQKz1dzFjV-cfLYp0VXn9MFlIT4bF7a0-kICJ66X259-_AIDh6XWchH_YTHb8JN1a_pcTwpSLb3Bw8Wcov3UQjuWhvcWaamzKz4MgrETXwUR-AwsV28Lg743NaUjPyoFjjF6GxYxarX173e0BJDqUu0q9m9Va35obPtq7zST0S5vgv-b2HXVTS2SB07xyNMBc4gV1bS7gV-_U-VioIxnlD1B0cOX67UHnH3iTZXQrYtKx-16");'></div>
+<div class="absolute top-1 right-1">
+<span class="material-symbols-outlined text-primary text-sm fill-1">check_circle</span>
+</div>
+</div>
+<!-- Regular Items -->
+<div class="group relative aspect-square rounded-xl bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 cursor-pointer flex items-center justify-center transition-all">
+<div class="w-16 h-16 bg-center bg-no-repeat bg-contain opacity-80 group-hover:opacity-100" data-alt="Beanie accessory icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDIuO48AtRMGNfVPjEZG4aXm0KbGvQfdeBDrAxSQD_b-633Xr_FeuROiFwKM33qV351SCFPhzh4PykE7OZkV9t1IhwfoRyl4nMzeBx5aPJt1nsOKkhGyx6VeCzP2nGZCdTxuYjUfJt-8K827SM8uj9wHj2iB_sykKwOa-4GK3uQoyLGNF-ncMInvvzx78LxgkoGrmazY-dA_Cj0KasiqhYlRoQENXQfDBPOTGqBfjBO_ORW_JvipjkhH2RGlQsiEbxMtzhev2eajdS0");'></div>
+</div>
+<div class="group relative aspect-square rounded-xl bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 cursor-pointer flex items-center justify-center transition-all">
+<div class="w-16 h-16 bg-center bg-no-repeat bg-contain opacity-80 group-hover:opacity-100" data-alt="Crown accessory icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMbs2o4nmTS-HH9EeWB5fYVwUqA9A7IfdrW5kucaYR2sybteI1urfsHhGX6d_J7wn3BagRQlgIW0XLt_IrOEuOYqd2RbBZrNwIPo6qc7g02jlMex_5ubFz8TKf_9d5ibxwMEnRtKm88h235Ld6Okj0XoJmJ_8bkro-387tGvrFdviC7uuWoftTDZYXh1Ky2qpLaybPGOUCgaQNLgD6KHNt7C82QAS5veAEn7u55QbsZ2k97qlDxLjgw2CXY4_M-yCu1s7eFT81nbDo");'></div>
+</div>
+<div class="group relative aspect-square rounded-xl bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 cursor-pointer flex items-center justify-center transition-all">
+<div class="w-16 h-16 bg-center bg-no-repeat bg-contain opacity-80 group-hover:opacity-100" data-alt="Viking helmet accessory icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCASGqFRKn8IG1GFiUVhRsIghfeq0QttS8KZmmPrgEM55PkLJEYmONtuGf5C_Zbx0z6RYOe5fcXfyCyAr6gO6w9hFdhmIrwFTx21GvnfNNdzYufIh2xtQnIeteuP92H7Rcta609EZlC6Mdv0PDu8t1sMVZ5hvbyTxqgI9iwjr69zguamfAY0DFQp-7KQbgSUzu4NI3D8TNtpcwS3ev_XbIgqCSFJ0B15s6Ot4GPvqrqzV3lzRuA7lmeEP9HfJouuYAkYEY3xtr39ugT");'></div>
+</div>
+<div class="group relative aspect-square rounded-xl bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 cursor-pointer flex items-center justify-center transition-all">
+<div class="w-16 h-16 bg-center bg-no-repeat bg-contain opacity-80 group-hover:opacity-100" data-alt="Witch hat accessory icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbL1swA_fSzFa50Q7PW36sf7PF_iTaafpQWuSwFWF__f4LH7eujUglRkPr9gb2ci7dxrWVEraJDk16vFQ1zz9KWXPha3ne8vHCsmBmKxMSY0JJ05O6nQThTxLNuWvj3_JQNS1IObu-_djqA2dgSuF3QnloXArzbvsfSMxJQFtwEdUpoargf1tOh8KoMQPbvJLy-ji2Sf4CzxMa-1OPYztk8nlSKUjYPKaEJsvOux-mlA86A8uTYHd6TXvY8T11Ixfw7bI7Tg0BruGP");'></div>
+</div>
+<div class="group relative aspect-square rounded-xl bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 cursor-pointer flex items-center justify-center transition-all">
+<div class="w-16 h-16 bg-center bg-no-repeat bg-contain opacity-80 group-hover:opacity-100" data-alt="Party hat accessory icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD7QTueadZZSA9_pWYYKDuXOqDAICaDHNRAoy34w9fnWTTzqgd01-l7FOma23XGhi-eddNojikPJVfCe6sxli8hGbB26f4zJfebC6p6uyLWzzMkN9pwSgMEX_n4_spUKGbh0p1aN2e_zj5FhIRN8XEjIyTmQVDyKEM55LhdGPorkROs-zIdKzXEwHS_FXAJO6D9SNci8eS7gXHTzOZVMRkuv-aW-qkRjOXT1cwwkFJUSx4tJXFhVS2zVj5wsNNsTwBlrJ1tUGoaaDYN");'></div>
+</div>
+<div class="group relative aspect-square rounded-xl bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 cursor-pointer flex items-center justify-center transition-all">
+<div class="w-16 h-16 bg-center bg-no-repeat bg-contain opacity-80 group-hover:opacity-100" data-alt="Fedora accessory icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDB8Lef7NacYqIxZaXh4kntZt-V-6M7FOD1f20cUIOHspn0in3o5dF5GTxQnQ_MTLsa-bbhbcbyaEIasAjMGztRgGmsi7886luPnhmFw-TyTO9PD-evqScf719NkxP8G7Pk7_lEGiMLBDBoJ2PlYuKHTdza3r1BEa0PaRwNiXCsSG01nkEHY9IDW4QPvjetz9HwNMQrQa9anVDHdccl8cznoRHRK_ZGADMFzHMiSaJYcsGqluPa0h1hMiB9h3zZhU6EaipuaYzUZX9Z");'></div>
+</div>
+<div class="group relative aspect-square rounded-xl bg-slate-50 dark:bg-slate-800/50 border-2 border-transparent hover:border-primary/50 cursor-pointer flex items-center justify-center transition-all">
+<div class="w-16 h-16 bg-center bg-no-repeat bg-contain opacity-80 group-hover:opacity-100" data-alt="Top hat accessory icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMweue90AKI8xjxN3wKxJmNJEqDYY-gZHXmlFocUKac8JFnD2vKFEaMWzVHFuUXZNT77jNyBdygQFuZ_9yKLAWbfkO-aLV9ZqlC3Hx2ywdqXWNf6OaQy4pnYIsQ_QguGygFd6cZebbvmxfDK3SDpCV04BD5Qr4LgvR0bjXa-iGAzpygAXhnc5KHD0py6jeYV_xYorg48M4Y5snt6rEp-bsbanUaIVlW13D5te8EzSId-lMuMfW-RmJdu195XG_plnEhlt9gLkLXdb0");'></div>
+</div>
+<!-- Lock Item -->
+<div class="group relative aspect-square rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">lock</span>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="p-6 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
+<button class="w-full flex cursor-pointer items-center justify-center rounded-full h-14 px-8 bg-primary text-white text-lg font-bold shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all active:scale-95">
+<span class="truncate tracking-widest uppercase">¡LISTO!</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Stats/Info Bar -->
+<div class="max-w-[1200px] mx-auto w-full px-6 pb-10">
+<div class="flex flex-wrap gap-4 items-center justify-between p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-500 fill-1">monetization_on</span>
+<span class="font-bold">2,450</span>
+</div>
+<div class="h-6 w-[1px] bg-slate-200 dark:bg-slate-800"></div>
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+<span class="text-sm font-medium">Desbloqueado: 12/48 Items</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Aleatorio</button>
+<button class="px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">Limpiar Todo</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

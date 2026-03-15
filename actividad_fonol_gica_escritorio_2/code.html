@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Actividad Fonológica - Desktop</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">child_care</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">Actividad Fonológica</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">vibration</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">settings</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">close</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-5xl mx-auto w-full px-6 py-12 flex flex-col items-center">
+<!-- Progress Bar -->
+<div class="w-full max-w-md bg-slate-200 dark:bg-slate-800 h-3 rounded-full mb-12 overflow-hidden">
+<div class="bg-primary h-full w-2/3 rounded-full"></div>
+</div>
+<!-- Question Section -->
+<div class="text-center mb-10">
+<h2 class="text-4xl md:text-5xl font-black text-slate-900 dark:text-slate-50 mb-8 tracking-tight">¿Cuál comienza con el sonido <span class="text-primary">/a/</span>?</h2>
+<!-- Large Audio Button -->
+<button class="group flex items-center gap-4 bg-primary text-white px-8 py-4 rounded-full shadow-lg shadow-primary/20 hover:scale-105 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-3xl">volume_up</span>
+<span class="text-lg font-bold tracking-wide uppercase">ESCUCHAR SONIDO</span>
+</button>
+</div>
+<!-- Option Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mt-8">
+<!-- Card 1 -->
+<div class="group bg-white dark:bg-slate-900 border-2 border-transparent hover:border-primary p-6 rounded-xl shadow-sm hover:shadow-xl transition-all flex flex-col items-center cursor-pointer">
+<div class="w-full aspect-square rounded-lg bg-slate-100 dark:bg-slate-800 mb-6 overflow-hidden flex items-center justify-center relative">
+<img alt="Apple" class="w-full h-full object-cover" data-alt="A fresh red apple on a clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBciAagFlRALC-VK8C3Y8axcBC04Gga-4ApOrz2Oa3maahzUHPo2LlnsduO9YeXjG0GZTpwpu2ZwJonHedr2Fvrg7nM2dRfDfs_lBx_FQuvEKrLJV8dFjgxn7QaAA6vzJ99Ap83cWaUDXOE6fZq_-vQzA9qAxoRby2hOX1FoPGRXB2FphzxBsE7Nn7s0O3vY58CpVtPFIf5cxLAMgZnHU_LI_gG2YPiR3148lFqfMfI66H2KPMfBXCY0Gkkj5uTugZutbGNxpn5HRcg"/>
+<div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="w-full flex items-center justify-between">
+<div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-slate-50">Manzana</h3>
+<p class="text-slate-500 dark:text-slate-400 font-medium">Sonido: /a/</p>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white dark:bg-slate-900 border-2 border-transparent hover:border-primary p-6 rounded-xl shadow-sm hover:shadow-xl transition-all flex flex-col items-center cursor-pointer">
+<div class="w-full aspect-square rounded-lg bg-slate-100 dark:bg-slate-800 mb-6 overflow-hidden flex items-center justify-center relative">
+<img alt="Ant" class="w-full h-full object-cover" data-alt="A small ant on a natural surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZXuK2uIdczt8GlqC-KKEMWdTPpHSoyBOk_0DUEl6GNGwNQOf32f4Q1cX--F75kEUWHEP18Q6qDv0PLxYGIivDCFIUq0zJPu7ddxjJpJXyc4JqnxVtfx6q_h2Bl6bKMSoTrVO9gSJxp08hcoNKI5O-PJdQxyqHoU3i-KsZ_-4KfkUt9WfSsHxJNp08wqkZuaOGPqxTGDtqVkz9_yXZWQH4hfoaCIzMlGsyDThCFWAOynpMJA82jfbetkjMo_RSexKxl3K1cBkjJ7WK"/>
+<div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="w-full flex items-center justify-between">
+<div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-slate-50">Hormiga</h3>
+<p class="text-slate-500 dark:text-slate-400 font-medium">Sonido: /a/</p>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white dark:bg-slate-900 border-2 border-transparent hover:border-primary p-6 rounded-xl shadow-sm hover:shadow-xl transition-all flex flex-col items-center cursor-pointer">
+<div class="w-full aspect-square rounded-lg bg-slate-100 dark:bg-slate-800 mb-6 overflow-hidden flex items-center justify-center relative">
+<img alt="Ball" class="w-full h-full object-cover" data-alt="A colorful bouncy ball on a playground" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQW8VF6heVOCKSH7waPCQCqL12U7zIm3J0W31ym1uny4uOAN3AFnwEWIh5ryagNNAkOKrjJAGfxYA3nP2LR2xUJaWMR9r-wK46pj4F1-CK9gUDBGDRTjAOVk_E7SNz_3S48u64AEg80wULGLT3NECbAIoSPd3PMwRTOCqkvBSNh_sw-EKXrexyER87Nnpd1Nc_VboDA8baIrWkI33uuTixbPrK2p1-9wAuIHyrI2myx6q5hpeDaayW6cBaIzag5_7hHgHZ3AoxKuV8"/>
+<div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="w-full flex items-center justify-between">
+<div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-slate-50">Pelota</h3>
+<p class="text-slate-500 dark:text-slate-400 font-medium">Sonido: /b/</p>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Footer Navigation -->
+<footer class="mt-20 w-full flex justify-center">
+<button class="flex items-center justify-center gap-3 bg-primary text-white h-16 px-12 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/30 group">
+<span>Siguiente Actividad</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</footer>
+</main>
+<!-- Background Decoration -->
+<div class="fixed top-0 right-0 -z-10 opacity-10 pointer-events-none">
+<svg fill="none" height="600" viewbox="0 0 600 600" width="600" xmlns="http://www.w3.org/2000/svg">
+<circle cx="400" cy="200" fill="#4b8fe2" r="200"></circle>
+</svg>
+</div>
+<div class="fixed bottom-0 left-0 -z-10 opacity-5 pointer-events-none">
+<svg fill="none" height="400" viewbox="0 0 400 400" width="400" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#4b8fe2" height="300" rx="150" width="300" x="-100" y="100"></rect>
+</svg>
+</div>
+</body></html>

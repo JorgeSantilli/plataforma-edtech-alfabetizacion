@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400,700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Adventure Academy - Explorer Map</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 bg-primary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">auto_stories</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">Adventure Academy</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-8 items-center">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary text-sm font-bold leading-normal flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-lg">map</span> Map
+                    </a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-lg">assignment</span> Quests
+                    </a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-lg">shopping_bag</span> Shop
+                    </a>
+</nav>
+<div class="flex gap-2">
+<div class="flex min-w-[100px] items-center justify-center rounded-full h-10 px-4 bg-primary text-white text-sm font-bold shadow-sm">
+<span class="material-symbols-outlined mr-1 text-lg">star</span>
+<span class="truncate">1,250</span>
+</div>
+<div class="flex min-w-[100px] items-center justify-center rounded-full h-10 px-4 bg-amber-400 text-white text-sm font-bold shadow-sm">
+<span class="material-symbols-outlined mr-1 text-lg">toll</span>
+<span class="truncate">500</span>
+</div>
+</div>
+<div class="bg-primary/20 p-0.5 rounded-full border-2 border-primary">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar illustration of a young explorer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_oqWNPB2oiwiYJ3-SwTsuprjmUb92z9kyLpf3gYPaA8hSkawTF7sBRbL0PQJENyf866_hUEfurLSOyrO6yqvWGOTSq0z_uI3-e5U5IbMojFf5J39eP8KldY1HG-PzrqmxtTLAcoHJzcBAWGS0lPUkHlwfWLZaWh5hw5E5_pCv6mPmHsk_it63Xbyqcvafd1fR1YkQRAqPV8g-Vab2FDs5LknkDBClkQ35oNnRyh1hmFZh6p3_R8t5r2zO95bEJUsV8O3gN6ilC7Yh");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-[1440px] mx-auto w-full p-6 md:p-10">
+<!-- Header Section -->
+<div class="mb-10 text-center">
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-4xl md:text-5xl font-bold mb-4">Choose Your Island!</h1>
+<div class="max-w-md mx-auto flex flex-col gap-2">
+<div class="flex justify-between items-center text-sm font-bold text-slate-600 dark:text-slate-400">
+<span>Overall Progress</span>
+<span class="text-primary bg-primary/10 px-3 py-1 rounded-full">65% Complete</span>
+</div>
+<div class="w-full h-4 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 65%;"></div>
+</div>
+<p class="text-slate-500 text-sm font-medium">Explorer Level 12 • 5 Day Streak 🔥</p>
+</div>
+</div>
+<!-- Adventure Map Grid -->
+<div class="relative min-h-[600px] bg-sky-50 dark:bg-slate-900/50 rounded-xl p-8 border-4 border-dashed border-primary/20">
+<!-- Background Map Element (Abstract) -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #4b8fe2 1px, transparent 0); background-size: 40px 40px;"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+<!-- Grammar Grove Island -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 bg-white dark:bg-slate-800 border-b-8 border-emerald-500">
+<div class="aspect-video bg-cover bg-center relative" data-alt="Lush green island with giant alphabet trees" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaJlW1TrvEcDi6t0063yv7NUclmLPpq5awbZFr_VfmGvVwf6wjDDCegyNWOsUrOp0otkrlpXlQoQ18IvTRgdj3I7o7HFGXSHT1KSmRqlA7TTiZrz2-oVJlJrqpJbopJV0e4b8Rus4UlcO97Cg2-vV_SGpKvl1oCPKEx1Qr6MPl5He5N3Ss7iFxVOH3S85cDsBYxlwfMA4SmaU-Omyldg5XU0dhwUiER1MmKXavJscXBXiVjUOxapy-iS3I7ywh0tiATUY9aLYr3EA4");'>
+<div class="absolute top-4 right-4 bg-emerald-500 text-white p-2 rounded-full flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-xl">check_circle</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-2">Grammar Grove</h3>
+<div class="flex items-center gap-1 text-amber-400 mb-4">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="text-slate-400 font-bold ml-2">3/3 Stars</span>
+</div>
+<button class="w-full py-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full font-bold transition-colors shadow-md">REPLAY LEVEL</button>
+</div>
+</div>
+</div>
+<!-- Writing Peak Island -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 bg-white dark:bg-slate-800 border-b-8 border-primary">
+<div class="aspect-video bg-cover bg-center relative" data-alt="High mountain peak with fountain pen waterfall" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJQKPYlzZNZcG1zy8A3HHwMSrzynqhP7WG1LZ5zQqI4oM9G9GaHJpqp2JGmSaIPTVqTUonTbzorkd4p2AH9_MRYXG41OEO4k-kVf6NgPyO5nT0K5a5rXzZfOcs96PIATZXnJKw8S7zkE5sZpViT8s2coy8QdMLA9NvGuewRyeV708g0y7wduFD3bUgnBE3NKNNbCblCrb0sq8jIxYWmU4nc0MPVxe2AFD2RksiUByBl01DB3UoaskEBAF3ovgn9MMBLgVfo_oHwitL");'>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute top-4 left-4 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Next Up</div>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-2">Writing Peak</h3>
+<div class="flex items-center gap-1 text-amber-400 mb-4">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="text-slate-400 font-bold ml-2">1/3 Stars</span>
+</div>
+<button class="w-full py-4 bg-primary hover:bg-primary/90 text-white rounded-full font-bold transition-colors shadow-md flex items-center justify-center gap-2">
+                                    CONTINUE <span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Spelling Springs Island -->
+<div class="group cursor-pointer opacity-80 hover:opacity-100">
+<div class="relative overflow-hidden rounded-xl shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 bg-white dark:bg-slate-800 border-b-8 border-slate-300">
+<div class="aspect-video bg-cover bg-center relative grayscale group-hover:grayscale-0 transition-all" data-alt="Tropical island with letter-shaped bubbles in the water" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFF17t9hx4_UoO-czeIBvopTFy1dTlPDDrRL5sqAojsL3z2JO0lsS12-FcYIs3Ibn4hgmLqp9x6pdPWPm9daSi15qwsUHZTl1-cVrZh17D3ocnK2GgsZLM9eKSs0eMO0vAAOG1UynF6lHBeQ_xzjodj-sihso5djJ5mT8xYVsEgfwbQ2gSaOqIvFQKvVhwsOtxU_n2K-uU-3NkytxbaUmXny2yMGS9WEXabAgDt8p5yaFiwshtZd7noshH12JhbTCX1isJPp2-cyJX");'>
+<div class="absolute inset-0 bg-slate-900/40 flex items-center justify-center group-hover:bg-slate-900/10 transition-colors">
+<span class="material-symbols-outlined text-white text-6xl">lock</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-2 text-slate-500">Spelling Springs</h3>
+<div class="flex items-center gap-1 text-slate-300 mb-4">
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="text-slate-400 font-bold ml-2 text-xs">Unlock at Level 15</span>
+</div>
+<button class="w-full py-4 bg-slate-200 dark:bg-slate-700 text-slate-500 rounded-full font-bold cursor-not-allowed">LOCKED</button>
+</div>
+</div>
+</div>
+<!-- Reading Reef Island -->
+<div class="group cursor-pointer opacity-80 hover:opacity-100">
+<div class="relative overflow-hidden rounded-xl shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 bg-white dark:bg-slate-800 border-b-8 border-slate-300">
+<div class="aspect-video bg-cover bg-center relative grayscale group-hover:grayscale-0 transition-all" data-alt="Underwater coral reef shaped like an open book" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqUbxpG9zq3X3MZdsfXd09A4FGCCaAzZP2slHqvX3Qn8gkghx2diAdnvSDOD-UrfwxoDRAt0YRjYDgsw8MuHrCfugPkSoN5tG3k_AteVRaGRnEmuV7VvqAkK1-3_x2QGMywhlBrM04Lo2ppapZ_9OawLz5F6EBnJrHd4A_4L0eHan9ODNvAGgjTeQ7FIXVI_Wz1bHkAhYPiz8J-JXfxF05DoHo2inVV8w7AtUdeIodj7-toipoUKnahx8lXqTWtHqDGHCAhcxsyc3Q");'>
+<div class="absolute inset-0 bg-slate-900/40 flex items-center justify-center group-hover:bg-slate-900/10 transition-colors">
+<span class="material-symbols-outlined text-white text-6xl">lock</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-2xl font-bold mb-2 text-slate-500">Reading Reef</h3>
+<div class="flex items-center gap-1 text-slate-300 mb-4">
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="text-slate-400 font-bold ml-2 text-xs">Unlock at Level 20</span>
+</div>
+<button class="w-full py-4 bg-slate-200 dark:bg-slate-700 text-slate-500 rounded-full font-bold cursor-not-allowed">LOCKED</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Helper Button -->
+<button class="fixed bottom-10 right-10 size-20 bg-amber-400 hover:bg-amber-500 text-white rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 z-50">
+<span class="material-symbols-outlined text-4xl">lightbulb</span>
+</button>
+</div>
+<!-- Stats & Badges Section -->
+<div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-primary/10 flex items-center gap-4">
+<div class="size-14 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center text-amber-500">
+<span class="material-symbols-outlined text-3xl">emoji_events</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium">Total Stars</p>
+<p class="text-2xl font-bold">45</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-primary/10 flex items-center gap-4">
+<div class="size-14 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">military_tech</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium">Badges Earned</p>
+<p class="text-2xl font-bold">12</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-primary/10 flex items-center gap-4">
+<div class="size-14 bg-rose-100 dark:bg-rose-900/30 rounded-full flex items-center justify-center text-rose-500">
+<span class="material-symbols-outlined text-3xl">local_fire_department</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium">Daily Streak</p>
+<p class="text-2xl font-bold">5 Days</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-primary/10 flex items-center gap-4">
+<div class="size-14 bg-sky-100 dark:bg-sky-900/30 rounded-full flex items-center justify-center text-sky-500">
+<span class="material-symbols-outlined text-3xl">history_edu</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium">Lessons Done</p>
+<p class="text-2xl font-bold">128</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-auto py-10 px-10 border-t border-primary/10 text-center">
+<p class="text-slate-400 text-sm font-medium">Ready for more? New islands discovered every month!</p>
+<div class="flex justify-center gap-4 mt-4">
+<span class="size-3 bg-primary rounded-full"></span>
+<span class="size-3 bg-primary/40 rounded-full"></span>
+<span class="size-3 bg-primary/40 rounded-full"></span>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4b8fe2",
+              "background-light": "#f6f7f8",
+              "background-dark": "#121820",
+            },
+            fontFamily: {
+              "display": ["Spline Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<title>Aprendo a Leer - Correspondencia Grafema-Fonema</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header / Navigation -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+<div class="text-primary flex size-12 shrink-0 items-center cursor-pointer">
+<span class="material-symbols-outlined text-3xl">arrow_back</span>
+</div>
+<div class="flex flex-col items-center">
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">¡Completa la palabra!</h2>
+<div class="flex gap-1 mt-1">
+<div class="h-2 w-8 rounded-full bg-primary"></div>
+<div class="h-2 w-8 rounded-full bg-primary/20"></div>
+<div class="h-2 w-8 rounded-full bg-primary/20"></div>
+</div>
+</div>
+<div class="flex w-12 items-center justify-end">
+<button class="flex size-12 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-3xl">help</span>
+</button>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col items-center px-4 py-6 max-w-lg mx-auto w-full">
+<!-- Target Image Card -->
+<div class="w-full @container mb-8">
+<div class="relative group">
+<div class="w-full bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-xl shadow-primary/10 border-4 border-white dark:border-slate-700 min-h-64 flex flex-col">
+<div class="aspect-square w-full bg-center bg-no-repeat bg-cover" data-alt="Un gato naranja tierno mirando a la cámara" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUezC5Bg2e6COfPxJ2nDzFtLl61rGitmAfLdiRAc1bEp0qkNOpPNoWW-Z6ZOS_wJ7nE4AedLRFgIcQVRHiANITgYVzuBvW6EjnwzJonbv8tshpPOaMyfFQ9Lcw1zYN1341cvnLkH4YoGLjRC5CZ7J9k-fBJWKjNWJNSJ-PjhBi5u9WphTKet7pTC0feU8BJCCO3D8GXe_8flKxz4Dv-S4neU7rlI7rm_8JDM_b5BpDsFscIWO4Py1l1eAZidlYmtU76ubMak2Fy_YF");'>
+</div>
+<div class="absolute top-4 right-4">
+<button class="size-[70pt] bg-primary text-white rounded-full shadow-lg flex items-center justify-center transform active:scale-95 transition-transform">
+<span class="material-symbols-outlined !text-5xl">volume_up</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interaction Zone: Word completion -->
+<div class="flex flex-col items-center gap-8 w-full">
+<div class="flex items-center gap-3">
+<!-- Target Slot -->
+<div class="size-[70pt] border-4 border-dashed border-primary/40 rounded-xl flex items-center justify-center bg-primary/5">
+<span class="text-primary/30 text-4xl font-bold">?</span>
+</div>
+<!-- Fixed Letters -->
+<div class="size-[70pt] bg-white dark:bg-slate-800 rounded-xl shadow-md flex items-center justify-center border-b-8 border-slate-200 dark:border-slate-900">
+<span class="text-5xl font-bold text-slate-800 dark:text-slate-100">A</span>
+</div>
+<div class="size-[70pt] bg-white dark:bg-slate-800 rounded-xl shadow-md flex items-center justify-center border-b-8 border-slate-200 dark:border-slate-900">
+<span class="text-5xl font-bold text-slate-800 dark:text-slate-100">T</span>
+</div>
+<div class="size-[70pt] bg-white dark:bg-slate-800 rounded-xl shadow-md flex items-center justify-center border-b-8 border-slate-200 dark:border-slate-900">
+<span class="text-5xl font-bold text-slate-800 dark:text-slate-100">O</span>
+</div>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-lg font-medium text-center px-4">
+                    Arrastra la letra inicial para formar <span class="text-primary font-bold">GATO</span>
+</p>
+<!-- Letter Bank (Draggable items) -->
+<div class="grid grid-cols-3 gap-6 w-full mt-4">
+<!-- Correct Letter (Scaffolding: Subtle shadow/glow if needed) -->
+<div class="flex flex-col items-center gap-2">
+<div class="size-[70pt] bg-primary text-white rounded-xl shadow-xl shadow-primary/30 flex items-center justify-center cursor-grab active:cursor-grabbing transform hover:scale-105 transition-all ring-4 ring-primary/20 animate-pulse">
+<span class="text-5xl font-bold">G</span>
+</div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase">Gato</span>
+</div>
+<!-- Distractor 1 -->
+<div class="flex flex-col items-center gap-2">
+<div class="size-[70pt] bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-xl shadow-md flex items-center justify-center cursor-grab active:cursor-grabbing transform hover:scale-105 transition-all border-b-8 border-slate-200 dark:border-slate-900">
+<span class="text-5xl font-bold">P</span>
+</div>
+<span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Pato</span>
+</div>
+<!-- Distractor 2 -->
+<div class="flex flex-col items-center gap-2">
+<div class="size-[70pt] bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 rounded-xl shadow-md flex items-center justify-center cursor-grab active:cursor-grabbing transform hover:scale-105 transition-all border-b-8 border-slate-200 dark:border-slate-900">
+<span class="text-5xl font-bold">M</span>
+</div>
+<span class="text-xs font-bold text-slate-400 tracking-widest uppercase">Mano</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="sticky bottom-0 w-full border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-4 pb-6 pt-2">
+<div class="flex justify-around items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-2xl fill-1">home</span>
+</div>
+<span class="text-xs font-bold">Inicio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<div class="flex h-12 w-12 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">star</span>
+</div>
+<span class="text-xs font-bold">Premios</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<div class="flex h-12 w-12 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</div>
+<span class="text-xs font-bold">Ajustes</span>
+</a>
+</div>
+</nav>
+</div>
+<!-- Scaffolding Highlight Effect (Visual representation of "shining" for fail state) -->
+<style>
+        @keyframes pulse-highlight {
+            0% { box-shadow: 0 0 0 0 rgba(75, 143, 226, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(75, 143, 226, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(75, 143, 226, 0); }
+        }
+        .animate-pulse {
+            animation: pulse-highlight 2s infinite;
+        }
+    </style>
+</body></html>

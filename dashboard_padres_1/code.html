@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Parental Dashboard - Literacy App</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="max-w-md mx-auto bg-white dark:bg-slate-900 shadow-xl min-h-screen flex flex-col">
+<!-- Header -->
+<header class="flex items-center justify-between p-6 pb-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary/10 flex items-center justify-center rounded-full text-primary">
+<span class="material-symbols-outlined">shield_person</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">Portal Parental</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<!-- Child Profile Brief -->
+<div class="p-6">
+<div class="bg-primary/5 dark:bg-primary/10 rounded-xl p-4 flex items-center gap-4 border border-primary/10">
+<div class="size-16 rounded-full bg-cover bg-center border-2 border-white dark:border-slate-800" data-alt="Happy child smiling portrait for profile" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8Ip4tyO_eJF71A3jR0rz6GfV1sUc6NUWklDWk1mPjK12n8wekX0b-BsKd0VCFjhpXfyVSSxiB1VPpIH8Ayfy1oXC_SGzM3jvTUiQr_2VJz5a44b58A1wF44Vgkm551Q7K-iMD_5uDfgp956rPE-iCStS2JE1RiGh2ZV40q62Lm5jp5IY0-ZuNZMcks9tDn7ojTIchPid_K4YYr6iaMWWQHMa8JtQntsOeMekZmDkjkAIjqvWYNF-scTI-y1UmSM9Pme-p4tpFOr75')">
+</div>
+<div>
+<h2 class="font-bold text-lg">Progreso de Leo</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Nivel 3 • Lector en Crecimiento</p>
+</div>
+<div class="ml-auto">
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Weekly Progress Chart -->
+<section class="px-6 py-2">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-slate-800 dark:text-slate-200">Actividad de Lectura</h3>
+<span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded-full">+24% vs last week</span>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4 border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-end h-32 px-2">
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-2/3 bg-primary/20 rounded-t-md" style="height: 40%;"></div>
+<span class="text-[10px] font-bold text-slate-400">M</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-2/3 bg-primary/20 rounded-t-md" style="height: 65%;"></div>
+<span class="text-[10px] font-bold text-slate-400">T</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-2/3 bg-primary rounded-t-md" style="height: 90%;"></div>
+<span class="text-[10px] font-bold text-slate-400">W</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-2/3 bg-primary/20 rounded-t-md" style="height: 30%;"></div>
+<span class="text-[10px] font-bold text-slate-400">T</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-2/3 bg-primary/20 rounded-t-md" style="height: 55%;"></div>
+<span class="text-[10px] font-bold text-slate-400">F</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-2/3 bg-primary/20 rounded-t-md" style="height: 80%;"></div>
+<span class="text-[10px] font-bold text-slate-400">S</span>
+</div>
+<div class="flex flex-col items-center gap-2 w-full">
+<div class="w-2/3 bg-primary/20 rounded-t-md" style="height: 70%;"></div>
+<span class="text-[10px] font-bold text-slate-400">S</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex justify-between">
+<div class="text-center">
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Libros</p>
+<p class="font-bold text-lg text-primary">12</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Palabras Nuevas</p>
+<p class="font-bold text-lg text-primary">48</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Minutos</p>
+<p class="font-bold text-lg text-primary">125</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Controls Section -->
+<section class="p-6 space-y-6">
+<!-- Screen Time Slider -->
+<div>
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-bold text-slate-800 dark:text-slate-200">Tiempo de Pantalla Diario</h3>
+<span class="text-sm font-bold text-primary">45 Minutes</span>
+</div>
+<div class="relative w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full">
+<div class="absolute top-0 left-0 h-full bg-primary rounded-full" style="width: 60%;"></div>
+<div class="absolute top-1/2 left-[60%] -translate-y-1/2 size-6 bg-white border-2 border-primary rounded-full shadow-lg"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] font-bold text-slate-400">
+<span>15M</span>
+<span>30M</span>
+<span>45M</span>
+<span>60M</span>
+<span>90M+</span>
+</div>
+</div>
+<!-- Learning Focus Toggles -->
+<div>
+<h3 class="font-bold text-slate-800 dark:text-slate-200 mb-3">Tiempo de Pantalla Diario</h3>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center gap-3 p-3 rounded-xl border-2 border-primary bg-primary/5 text-left">
+<div class="size-8 rounded-lg bg-primary text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">spellcheck</span>
+</div>
+<span class="text-xs font-bold leading-tight">Vocabulario</span>
+</button>
+<button class="flex items-center gap-3 p-3 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-transparent text-left opacity-60">
+<div class="size-8 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">record_voice_over</span>
+</div>
+<span class="text-xs font-bold leading-tight">Fonética y Audio</span>
+</button>
+<button class="flex items-center gap-3 p-3 rounded-xl border-2 border-slate-100 dark:border-slate-800 bg-transparent text-left opacity-60">
+<div class="size-8 rounded-lg bg-slate-200 dark:bg-slate-700 text-slate-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">menu_book</span>
+</div>
+<span class="text-xs font-bold leading-tight">Fluidez de Oraciones</span>
+</button>
+<button class="flex items-center gap-3 p-3 rounded-xl border-2 border-primary bg-primary/5 text-left">
+<div class="size-8 rounded-lg bg-primary text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">psychology</span>
+</div>
+<span class="text-xs font-bold leading-tight">Comprensión</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Subscription Section -->
+<section class="px-6 pb-6 mt-auto">
+<div class="bg-slate-900 dark:bg-primary/20 rounded-xl p-5 text-white flex items-center justify-between">
+<div>
+<p class="text-xs font-medium text-slate-400">Estado de la Suscripción</p>
+<p class="font-bold">Premium Family Plan</p>
+<p class="text-[10px] text-slate-400 mt-1">Renews on Oct 12, 2024</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-xs font-bold">
+                    Manage
+                </button>
+</div>
+</section>
+<!-- Parental Gate (Overlay Concept) -->
+<div class="fixed inset-0 bg-background-dark/80 backdrop-blur-sm z-50 flex items-center justify-center p-6 hidden">
+<!-- This would be toggled by JS, but showing for design purposes -->
+<div class="bg-white dark:bg-slate-900 w-full max-w-xs rounded-xl p-8 text-center shadow-2xl">
+<h4 class="font-bold text-lg mb-2">Control Parental</h4>
+<p class="text-sm text-slate-500 mb-6">Resuelve esto para acceder a los ajustes:</p>
+<p class="text-3xl font-bold mb-6 text-primary">12 + 7 = ?</p>
+<div class="grid grid-cols-2 gap-3 mb-6">
+<button class="p-3 rounded-lg border border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50">17</button>
+<button class="p-3 rounded-lg border border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50">19</button>
+<button class="p-3 rounded-lg border border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50">21</button>
+<button class="p-3 rounded-lg border border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50">15</button>
+</div>
+<button class="text-slate-400 text-xs font-bold uppercase tracking-widest">CANCELAR</button>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<nav class="border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-4 flex justify-between items-center mt-auto">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-bold">dashboard</span>
+<span class="text-[10px] font-bold">Estadísticas</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">library_books</span>
+<span class="text-[10px] font-bold">Biblioteca</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">auto_fix_high</span>
+<span class="text-[10px] font-bold">Asignar</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Cuenta</span>
+</a>
+</nav>
+</div>
+</body></html>

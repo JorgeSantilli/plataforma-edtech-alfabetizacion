@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4b8fe2",
+              "background-light": "#f6f7f8",
+              "background-dark": "#121820",
+              "accent-yellow": "#FFD700",
+              "accent-green": "#4CAF50"
+            },
+            fontFamily: {
+              "display": ["Spline Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-x-hidden">
+<div class="relative flex h-auto min-h-screen w-full flex-col max-w-md mx-auto">
+<!-- Header with Stars -->
+<div class="flex items-center p-6 pb-2 justify-between">
+<button class="flex size-12 shrink-0 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<div class="flex items-center bg-white dark:bg-slate-800 px-4 py-2 rounded-full shadow-sm border border-slate-200 dark:border-slate-700">
+<span class="material-symbols-outlined text-accent-yellow fill-1 mr-2">stars</span>
+<p class="text-primary text-xl font-bold leading-normal tracking-tight">500</p>
+</div>
+</div>
+<!-- Main Character Area -->
+<div class="flex flex-col items-center justify-center flex-grow p-4 min-h-[300px]">
+<div class="relative w-64 h-64 flex items-center justify-center">
+<!-- Background Glow -->
+<div class="absolute inset-0 bg-primary/10 rounded-full blur-3xl"></div>
+<!-- Character Placeholder -->
+<div class="relative z-10 w-full h-full bg-center bg-no-repeat bg-contain" data-alt="A cute blue friendly bird character smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRgvZQSUkS_EttRhKyBPEeWWdOYZlF2MbMtkczZjorx8OlMRiKJFgb9SydlbWfbBqoMKqI55x-S8b6Wmd9tDiLqH9J0b_KPbpJKF-rBnhC9pcGKMZxunyiWNhRfGfaXfGY1w490kKvFZgEcTUw2XB60HEQ_N0oL-_YDxDJHbh6VYe3IYSQYkPGx2zp4q_qyHfQ_4vfP1KpwPaPwEvmdlPVhcoOvDpfW9U1nssBoxMgHTxTHnuljO6fIJdOp1ThPEZkulIbDZg_ciZl");'>
+</div>
+</div>
+<h2 class="mt-4 text-2xl font-bold text-slate-800 dark:text-slate-100">¡Tu Amiguito!</h2>
+</div>
+<!-- Categories Carousel -->
+<div class="bg-white dark:bg-slate-900 rounded-t-xl shadow-2xl pb-6">
+<div class="flex overflow-x-auto px-4 py-6 gap-6 no-scrollbar">
+<!-- Category: Hats (Active) -->
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="flex size-16 items-center justify-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-3xl fill-1">bedtime</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider text-primary">Gorros</span>
+</div>
+<!-- Category: Glasses -->
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="flex size-16 items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-500">
+<span class="material-symbols-outlined text-3xl">eyeglasses</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-400">Lentes</span>
+</div>
+<!-- Category: Colors -->
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="flex size-16 items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-500">
+<span class="material-symbols-outlined text-3xl">palette</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-400">Colores</span>
+</div>
+<!-- Category: Pets -->
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="flex size-16 items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-500">
+<span class="material-symbols-outlined text-3xl">pets</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-400">Mascotas</span>
+</div>
+<!-- Category: Capes -->
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="flex size-16 items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-500">
+<span class="material-symbols-outlined text-3xl">apparel</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-400">Capa</span>
+</div>
+</div>
+<!-- Items Grid (Horizontal Scroll for better mobile feel) -->
+<div class="flex overflow-x-auto px-6 gap-4 pb-6 no-scrollbar">
+<!-- Item: Party Hat (Selected) -->
+<div class="flex flex-col min-w-[120px] aspect-square items-center justify-center bg-primary/10 border-4 border-primary rounded-lg relative overflow-hidden">
+<div class="w-20 h-20 bg-center bg-no-repeat bg-contain" data-alt="Colorful party hat with polka dots" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRugTzOwUryZNq6MMmlNwfNnzyW3Der_bsT-7HnbncsBA_AjtwXRbwq1snojDkg4Z85KqOiQlP69sotJ5BP5nmUao-gP9Djv6uUTljN1xWsxbXh_cq9pGcx6aGnILMqbkK4ETXemgVdXIofL-VKd8x7bn7JqiQA5RzkOYwDawbk6XAC72I6BYaBXWPhAZ8Mh5y0_9pu5pEqVNOHwI-8sYHEDcq8jrRfroOzz3t0jIpe41KOBUe2pLcr57h10zCbE__jzf8gajZ0Q7l");'>
+</div>
+<div class="absolute top-2 right-2 flex size-6 items-center justify-center bg-primary rounded-full">
+<span class="material-symbols-outlined text-white text-xs">check</span>
+</div>
+</div>
+<!-- Item: Crown -->
+<div class="flex flex-col min-w-[120px] aspect-square items-center justify-center bg-slate-50 dark:bg-slate-800 rounded-lg relative border border-slate-200 dark:border-slate-700">
+<div class="w-20 h-20 bg-center bg-no-repeat bg-contain" data-alt="Golden royal crown icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgq8Pexhf26KtL2wn5VoTzjmEGB3ZVyTXG6cy_2ORrgI0BnKIQ7It4mGHxATcxySaWcweynj2Ts30w1B-1hYCMJBzCqIX4sEGmDObcYUHna_hgBLON-HA_9kPP2Asj0dXSsV_uGpCvhTxbVgirz7LyuKD5HbqHTWhJ_eJzsHYVlrkVyc11iEioD7qjuLS6-uAbn5tP1zOPSSt0zY6YMRznIfGnWt7lxfg0tW4LGaI3amUGd_Rtjdo8O4hcwfelAoFSBS9ixd2FEULC");'>
+</div>
+</div>
+<!-- Item: Locked Wizard Hat -->
+<div class="flex flex-col min-w-[120px] aspect-square items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-lg relative border border-slate-200 dark:border-slate-700 grayscale">
+<div class="w-20 h-20 bg-center bg-no-repeat bg-contain opacity-40" data-alt="Magical wizard hat with stars" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALQHhyYdj-7zlyhCneR5bqWfJ7XTgGaHYdTmZXl4r6chc5bk_O_hAm7dc-y83-eyZ14ySWOV8uyxnVEb3A3WxTLHe2whPEati7bPw_wLZ2NimjwpYBb_lHeV4MsqWIk1u7uoECvts_6RcnOnB6I-O9fKEOm9nzzaRWnALtqCEbc2twKTAi_I3SAIwaACxoaSahgIdszBlJ51qXMmMR6CfQ76wMzhuG_pwBImPFvBSAKlc9FkqXJUzDx2tm99IPa3gFr7RHUKrGsmAp");'>
+</div>
+<div class="absolute inset-0 bg-black/5 flex flex-col items-center justify-center gap-1">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">lock</span>
+<div class="flex items-center bg-accent-yellow/90 px-2 py-0.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-xs fill-1">stars</span>
+<span class="text-[10px] font-bold ml-1">50</span>
+</div>
+</div>
+</div>
+<!-- Item: Locked Viking Helmet -->
+<div class="flex flex-col min-w-[120px] aspect-square items-center justify-center bg-slate-100 dark:bg-slate-800 rounded-lg relative border border-slate-200 dark:border-slate-700 grayscale">
+<div class="w-20 h-20 bg-center bg-no-repeat bg-contain opacity-40" data-alt="Viking helmet with horns" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJPlEMbqGu6Yu7NvpcZpNiUS3zzzH9HAHlLSqno6ClZrmZ6-Bjs-K69RZRTy9JdWdicvBdlqDjU6Yr4K0b_0NRUd0adXw-yvbsgAeergSl2rTr1uAN3LWN62hoZ47666EokQ2T17bMAUiCkn9ek1mbpE1uUeo-Nl8p2AC6bC8yQfp23pxuub_3pDVdzR3saN0uBvLmZ_JojdVmfSCfstOsAVoVL3BIHTenGV7-fOc7wL5JsUT3YuH_raZkiKOCccObmqyB9kFFZWay");'>
+</div>
+<div class="absolute inset-0 bg-black/5 flex flex-col items-center justify-center gap-1">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">lock</span>
+<div class="flex items-center bg-accent-yellow/90 px-2 py-0.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-xs fill-1">stars</span>
+<span class="text-[10px] font-bold ml-1">100</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Big Save Button -->
+<div class="flex px-6 pt-2 pb-8 justify-center">
+<button class="flex w-full max-w-[320px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-20 px-8 bg-accent-green text-white gap-3 shadow-xl shadow-accent-green/30 border-b-8 border-green-700 active:translate-y-1 active:border-b-4 transition-all">
+<span class="material-symbols-outlined text-4xl font-bold">check_circle</span>
+<span class="text-2xl font-bold tracking-wider">¡LISTO!</span>
+</button>
+</div>
+</div>
+</div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Parental Portal - Desktop Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav {
+            background-color: #4b8fe220;
+            color: #4b8fe2;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-64 flex-shrink-0 border-r border-primary/10 bg-white dark:bg-slate-900 flex flex-col justify-between p-6">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-1">
+<h1 class="text-xl font-bold text-primary tracking-tight">Parental Portal</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Education management</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-full active-nav transition-colors" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-sm font-semibold">Stats</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-full hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">library_books</span>
+<span class="text-sm font-semibold">Library</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-full hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="text-sm font-semibold">Assign</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-full hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-sm font-semibold">Account</span>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<div class="p-4 bg-primary/5 rounded-xl border border-primary/10">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">workspace_premium</span>
+<span class="text-xs font-bold uppercase tracking-wider text-primary">Premium Plan</span>
+</div>
+<p class="text-[10px] text-slate-500 mb-3">Next billing date: Oct 12, 2023</p>
+<button class="w-full py-2 bg-primary text-white text-xs font-bold rounded-full hover:opacity-90 transition-opacity">
+                        Manage Sub
+                    </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- Header Section -->
+<header class="flex justify-between items-end">
+<div class="space-y-1">
+<h2 class="text-3xl font-black tracking-tight">Child's Progress Dashboard</h2>
+<p class="text-slate-500 dark:text-slate-400">Real-time insights into learning milestones</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-sm font-bold">Alex Johnson</p>
+<p class="text-xs text-slate-500">Grade 4 Student</p>
+</div>
+<img alt="Student profile" class="w-12 h-12 rounded-full border-2 border-primary" data-alt="Portrait of a young smiling student" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFDeQpL5kk-E2OVSLAXz4WKuQlGwa3elDgRT7Jmtn6A5kDozD2Q78xINSrumfy-ZDk6WM453FZqCFBXAeFqL03_UUGZOh6tMj4VDstu5_pg4D7AVULrDVvCAwtFK6dMkQpBLnOD88iuW6uTUfuu7T-_wPvrD9zsdE7pr11A95L60YCS-VKhACXJxDfEUBm-i3eHZYdYbMJkFHj2rjEmU_vim_d-0yexZWPcicPQ8XMaOaOYkHL95TYvHIShaCtFm5C8UVrjkgaF49X"/>
+</div>
+</div>
+</header>
+<!-- Top Row: Progress & Screen Time -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Overall Progress Card -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 flex gap-6">
+<div class="w-48 h-48 flex-shrink-0 bg-primary/5 rounded-xl flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
+<div class="relative flex flex-col items-center">
+<span class="text-4xl font-black text-primary">85%</span>
+<span class="text-[10px] font-bold uppercase text-slate-400">Completed</span>
+</div>
+<!-- SVG Circle Progress simplified -->
+<svg class="absolute inset-0 w-full h-full -rotate-90">
+<circle class="text-primary/10" cx="50%" cy="50%" fill="transparent" r="40%" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="50%" cy="50%" fill="transparent" r="40%" stroke="currentColor" stroke-dasharray="251" stroke-dashoffset="38" stroke-width="8"></circle>
+</svg>
+</div>
+<div class="flex flex-col justify-center gap-3">
+<h3 class="text-xl font-bold">Weekly Goal Achievement</h3>
+<p class="text-slate-500 text-sm leading-relaxed">Your child has completed 85% of this week's science and math goals. Reading goals are slightly behind schedule.</p>
+<div class="flex items-center gap-4 mt-2">
+<span class="text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-700 px-3 py-1 rounded-full">Last activity: 15m ago</span>
+<button class="text-primary text-sm font-bold hover:underline">View Detailed Report</button>
+</div>
+</div>
+</div>
+<!-- Daily Screen Time -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-bold">Daily Screen Time</h3>
+<span class="text-2xl font-black text-primary">45 <span class="text-sm font-medium text-slate-400">mins</span></span>
+</div>
+<div class="relative pt-1">
+<div class="flex mb-2 items-center justify-between">
+<span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-primary bg-primary/10">Usage</span>
+<span class="text-xs font-semibold inline-block text-primary">Limit: 60m</span>
+</div>
+<div class="overflow-hidden h-3 mb-4 text-xs flex rounded-full bg-primary/10">
+<div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-primary rounded-full relative" style="width:75%">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-2 border-primary rounded-full shadow-md"></div>
+</div>
+</div>
+</div>
+</div>
+<p class="text-xs text-slate-500 italic">Remaining today: 15 minutes of educational content allowed.</p>
+</div>
+</div>
+<!-- Middle Row: Reading Activity & Focus Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Reading Activity Chart -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-bold">Reading Activity</h3>
+<div class="flex items-center gap-2">
+<span class="text-3xl font-black">120 <span class="text-sm font-medium text-slate-400">mins</span></span>
+<span class="text-green-500 text-xs font-bold">+15% vs last week</span>
+</div>
+</div>
+<select class="bg-slate-50 dark:bg-slate-800 border-none rounded-full text-xs font-bold px-4 py-2 focus:ring-primary">
+<option>This Week</option>
+<option>Last Week</option>
+</select>
+</div>
+<div class="flex items-end justify-between h-40 gap-2 px-2">
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/10 rounded-t-lg group-hover:bg-primary/30 transition-colors" style="height: 70%"></div>
+<span class="text-[10px] font-bold text-slate-400">Mon</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/10 rounded-t-lg group-hover:bg-primary/30 transition-colors" style="height: 90%"></div>
+<span class="text-[10px] font-bold text-slate-400">Tue</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/10 rounded-t-lg group-hover:bg-primary/30 transition-colors" style="height: 60%"></div>
+<span class="text-[10px] font-bold text-slate-400">Wed</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary rounded-t-lg shadow-lg shadow-primary/20" style="height: 100%"></div>
+<span class="text-[10px] font-bold text-primary">Thu</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/10 rounded-t-lg group-hover:bg-primary/30 transition-colors" style="height: 40%"></div>
+<span class="text-[10px] font-bold text-slate-400">Fri</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/10 rounded-t-lg group-hover:bg-primary/30 transition-colors" style="height: 20%"></div>
+<span class="text-[10px] font-bold text-slate-400">Sat</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary/10 rounded-t-lg group-hover:bg-primary/30 transition-colors" style="height: 30%"></div>
+<span class="text-[10px] font-bold text-slate-400">Sun</span>
+</div>
+</div>
+</div>
+<!-- Learning Focus Cards -->
+<div class="flex flex-col gap-4">
+<h3 class="font-bold px-1">Learning Focus</h3>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex items-center gap-4 hover:translate-x-1 transition-transform cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-orange-600">translate</span>
+</div>
+<div>
+<p class="font-bold text-sm">Vocabulary</p>
+<p class="text-[11px] text-slate-500">12 new words mastered today</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-slate-300">chevron_right</span>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex items-center gap-4 hover:translate-x-1 transition-transform cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-600">menu_book</span>
+</div>
+<div>
+<p class="font-bold text-sm">Comprehension</p>
+<p class="text-[11px] text-slate-500">Working on inferencing skills</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-slate-300">chevron_right</span>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm flex items-center gap-4 hover:translate-x-1 transition-transform cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-purple-600">functions</span>
+</div>
+<div>
+<p class="font-bold text-sm">Mathematics</p>
+<p class="text-[11px] text-slate-500">Mastered long division units</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-slate-300">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Bottom Section: Recent Assignments -->
+<section class="space-y-4">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-bold">Recent Assignments</h3>
+<button class="text-primary text-sm font-bold">See All</button>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50">
+<th class="px-6 py-4 text-xs font-bold uppercase text-slate-400">Subject</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-slate-400">Task Name</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-slate-400">Due Date</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-slate-400">Status</th>
+<th class="px-6 py-4 text-xs font-bold uppercase text-slate-400 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4">
+<span class="text-xs font-bold px-2 py-1 bg-blue-100 text-blue-700 rounded-full">Science</span>
+</td>
+<td class="px-6 py-4 text-sm font-medium">Solar System Quiz</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 14, 2023</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+<span class="text-sm">In Progress</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined">more_horiz</span></button>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<span class="text-xs font-bold px-2 py-1 bg-green-100 text-green-700 rounded-full">English</span>
+</td>
+<td class="px-6 py-4 text-sm font-medium">Adjective Mastery</td>
+<td class="px-6 py-4 text-sm text-slate-500">Oct 12, 2023</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span class="text-sm">Completed</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined">more_horiz</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</div>
+</body></html>

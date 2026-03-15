@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Spline Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header / Navigation -->
+<header class="flex items-center justify-between border-b border-primary/10 px-6 py-4 lg:px-40 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="flex items-center justify-center size-10 rounded-full bg-primary text-white">
+<span class="material-symbols-outlined">emoji_events</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight">Sala de Recompensas</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="flex gap-2">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">music_note</span>
+</button>
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">celebration</span>
+</button>
+</div>
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden border-2 border-primary" data-alt="User profile avatar circular portrait">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHit_r1mjS12JVNIIxBFMjyRTfX5n5vcMheoR9K7yUr8fn7p_l_SNOCCmAgEAy7vxTNo49gdq5i3SPiQA0qnGqaAJzqhyzQFXVyLJrM8jRLQ6FjddVzCQhFGdT3ku4uqBrOAoUZykh8QHxANlTf1hzAtwjSwTaCMtKZeSwWhF2AjFXTB-nXtaaknPhnACqIRXLd9OUnMLbLrWwHejsG1W9gHgVPXSYsphJg9RPE9AeeSxcthw2e2xlP5nhHBsYeEJmhLGudJQbwWAa"/>
+</div>
+</div>
+</header>
+<main class="mx-auto w-full max-w-[1200px] px-6 py-8 lg:px-10">
+<!-- Hero Section -->
+<div class="flex flex-wrap justify-between items-end gap-6 mb-10">
+<div class="flex flex-col gap-2">
+<h1 class="text-5xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">¡Mis Logros!</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg">¡Sigue así, vas por un camino increíble!</p>
+</div>
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">map</span>
+<span>Volver al Mapa</span>
+</button>
+</div>
+<!-- Tabs -->
+<div class="mb-8">
+<div class="flex border-b border-slate-200 dark:border-slate-800 gap-8">
+<button class="flex flex-col items-center border-b-4 border-primary text-primary pb-3 px-4 font-bold">
+                            Trofeos
+                        </button>
+<button class="flex flex-col items-center border-b-4 border-transparent text-slate-400 dark:text-slate-500 pb-3 px-4 font-bold hover:text-slate-600">
+                            Insignias
+                        </button>
+</div>
+</div>
+<!-- Rewards Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
+<!-- Reward Card 1 -->
+<div class="group flex flex-col items-center text-center gap-4 p-4 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all">
+<div class="relative w-full aspect-square bg-gradient-to-br from-yellow-100 to-yellow-400 rounded-xl flex items-center justify-center overflow-hidden" data-alt="Shiny gold trophy on a bright pedestal">
+<span class="material-symbols-outlined text-6xl text-yellow-700 group-hover:scale-110 transition-transform">emoji_events</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Copa de Oro</p>
+<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Nivel Máximo</p>
+</div>
+</div>
+<!-- Reward Card 2 -->
+<div class="group flex flex-col items-center text-center gap-4 p-4 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all">
+<div class="relative w-full aspect-square bg-gradient-to-br from-blue-100 to-blue-400 rounded-xl flex items-center justify-center overflow-hidden" data-alt="Silver medal with blue ribbon">
+<span class="material-symbols-outlined text-6xl text-blue-700 group-hover:scale-110 transition-transform">military_tech</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Medalla Pro</p>
+<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Logro Desbloqueado</p>
+</div>
+</div>
+<!-- Reward Card 3 -->
+<div class="group flex flex-col items-center text-center gap-4 p-4 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all">
+<div class="relative w-full aspect-square bg-gradient-to-br from-purple-100 to-purple-400 rounded-xl flex items-center justify-center overflow-hidden" data-alt="Glowing purple star with cosmic sparkles">
+<span class="material-symbols-outlined text-6xl text-purple-700 group-hover:scale-110 transition-transform">star</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Estrella Galáctica</p>
+<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Brillante</p>
+</div>
+</div>
+<!-- Reward Card 4 -->
+<div class="group flex flex-col items-center text-center gap-4 p-4 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all">
+<div class="relative w-full aspect-square bg-gradient-to-br from-green-100 to-green-400 rounded-xl flex items-center justify-center overflow-hidden" data-alt="Large old leather bound book">
+<span class="material-symbols-outlined text-6xl text-green-700 group-hover:scale-110 transition-transform">menu_book</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Libro de Sabiduría</p>
+<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Coleccionista</p>
+</div>
+</div>
+<!-- Reward Card 5 -->
+<div class="group flex flex-col items-center text-center gap-4 p-4 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all">
+<div class="relative w-full aspect-square bg-gradient-to-br from-orange-100 to-orange-400 rounded-xl flex items-center justify-center overflow-hidden" data-alt="Rocket ship launching into the sky">
+<span class="material-symbols-outlined text-6xl text-orange-700 group-hover:scale-110 transition-transform">rocket_launch</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Super Lector</p>
+<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Velocidad</p>
+</div>
+</div>
+<!-- Reward Card 6 -->
+<div class="group flex flex-col items-center text-center gap-4 p-4 rounded-xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all">
+<div class="relative w-full aspect-square bg-gradient-to-br from-pink-100 to-pink-400 rounded-xl flex items-center justify-center overflow-hidden" data-alt="Musical notes and sound waves floating">
+<span class="material-symbols-outlined text-6xl text-pink-700 group-hover:scale-110 transition-transform">record_voice_over</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Master de Fonemas</p>
+<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Fonética Perfecta</p>
+</div>
+</div>
+</div>
+<!-- Footer Toggle Card -->
+<div class="p-8 rounded-xl bg-gradient-to-r from-primary to-primary/80 text-white shadow-xl shadow-primary/30 relative overflow-hidden">
+<!-- Abstract Background Pattern -->
+<div class="absolute inset-0 opacity-10" data-alt="Abstract white geometric patterns on blue background">
+<svg class="h-full w-full" fill="none" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<circle cx="200" cy="200" r="150" stroke="white" stroke-dasharray="20 40" stroke-width="20"></circle>
+<circle cx="200" cy="200" r="100" stroke="white" stroke-dasharray="10 20" stroke-width="10"></circle>
+</svg>
+</div>
+<div class="relative flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="size-16 rounded-full bg-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl">celebration</span>
+</div>
+<div class="flex flex-col">
+<h3 class="text-2xl font-bold">Fiesta de Logros</h3>
+<p class="text-white/80">Activa las animaciones festivas y la música de fondo</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-bold text-lg">FIESTA OFF</span>
+<label class="relative inline-flex items-center cursor-pointer group">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-16 h-8 bg-white/30 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-7 after:transition-all peer-checked:bg-white/50"></div>
+</label>
+<span class="font-bold text-lg">ON</span>
+</div>
+</div>
+</div>
+<!-- Map Location Context (Small indicator) -->
+<div class="mt-12 flex justify-center opacity-40">
+<div class="flex items-center gap-2 text-sm uppercase tracking-widest font-bold">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Mundo de las Letras</span>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

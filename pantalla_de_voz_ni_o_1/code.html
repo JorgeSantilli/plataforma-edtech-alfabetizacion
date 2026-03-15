@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4b8fe2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Kids Literacy - Voice Practice</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<div class="relative flex h-full min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+<button class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center justify-center rounded-full hover:bg-primary/10">
+<span class="material-symbols-outlined text-3xl">arrow_back</span>
+</button>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Daily Adventure</h2>
+</div>
+<div class="flex flex-col gap-3 p-6">
+<div class="flex gap-6 justify-between items-end">
+<p class="text-slate-900 dark:text-slate-100 text-base font-bold uppercase tracking-wider">Level 3 Progress</p>
+<p class="text-primary text-sm font-bold leading-normal">80% Complete</p>
+</div>
+<div class="rounded-full bg-slate-200 dark:bg-slate-800 h-4 w-full overflow-hidden border-2 border-white dark:border-slate-700 shadow-sm">
+<div class="h-full rounded-full bg-primary" style="width: 80%;"></div>
+</div>
+</div>
+<div class="flex flex-col flex-grow items-center justify-center px-6 gap-8">
+<div class="flex flex-col items-center gap-6">
+<div class="relative">
+<div class="absolute inset-0 bg-primary/20 rounded-full scale-125"></div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-40 w-40 border-4 border-white dark:border-slate-800 shadow-xl relative z-10" data-alt="A friendly cartoon character cheering and smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlFcKbFCvyV-IvGjsbFQkBJHXiFbpLR6VSB19VHOQpWsdtcjdcUxYggbqkFE-Hmp50q9FFZx23zLsInRUxxVHSRb4sYxUn2D2liKeyEqIk5jWQ27NNHLcmYj70wad7FSVtNFuT8edvTKcfxYChHNTAcyUbv7Rnt4Aha4b1yNYMK-o4zUFZRJNYuJLyBYZg1DoU2TciHse10AbpydvuLBfyXZ8sOlXmvxHwyW2tqwkkFBAp7FiEesu8crRhVO7vnrd688y75dTJE-84");'>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center gap-2 max-w-xs">
+<p class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight text-center">"Read the word aloud!"</p>
+<p class="text-primary text-lg font-medium leading-normal text-center bg-primary/10 px-4 py-1 rounded-full">You're doing great!</p>
+</div>
+</div>
+<div class="w-full py-8 flex items-center justify-center">
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tighter text-7xl font-black leading-tight px-4 text-center drop-shadow-sm">Camisa</h1>
+</div>
+<div class="flex flex-col items-center gap-8 w-full pb-12">
+<div class="flex items-center gap-1 h-12">
+<div class="w-1.5 bg-primary/30 rounded-full h-4"></div>
+<div class="w-1.5 bg-primary/50 rounded-full h-8"></div>
+<div class="w-1.5 bg-primary rounded-full h-12"></div>
+<div class="w-1.5 bg-primary/60 rounded-full h-6"></div>
+<div class="w-1.5 bg-primary/40 rounded-full h-10"></div>
+<div class="w-1.5 bg-primary rounded-full h-14"></div>
+<div class="w-1.5 bg-primary/70 rounded-full h-8"></div>
+<div class="w-1.5 bg-primary/50 rounded-full h-4"></div>
+</div>
+<button class="relative flex items-center justify-center group">
+<div class="absolute inset-0 bg-primary/30 rounded-full scale-150 blur-xl"></div>
+<div class="bg-primary hover:bg-primary/90 text-white w-24 h-24 rounded-full flex items-center justify-center shadow-2xl transition-transform active:scale-95 border-8 border-white dark:border-slate-800 relative z-10">
+<span class="material-symbols-outlined text-5xl">mic</span>
+</div>
+</button>
+<div class="flex flex-col items-center gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-semibold uppercase tracking-widest">Listening...</p>
+<button class="text-primary font-bold text-lg hover:underline decoration-2 underline-offset-4">
+                        Try again? Click the hint
+                    </button>
+</div>
+</div>
+</div>
+<div class="mt-auto border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-4 pb-8 pt-4">
+<div class="flex gap-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 rounded-2xl py-2 text-primary" href="#">
+<span class="material-symbols-outlined text-3xl fill-1">home</span>
+<p class="text-xs font-bold leading-normal tracking-wide">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 py-2" href="#">
+<span class="material-symbols-outlined text-3xl">menu_book</span>
+<p class="text-xs font-bold leading-normal tracking-wide">Library</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 py-2" href="#">
+<span class="material-symbols-outlined text-3xl">military_tech</span>
+<p class="text-xs font-bold leading-normal tracking-wide">Badges</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500 py-2" href="#">
+<span class="material-symbols-outlined text-3xl">person</span>
+<p class="text-xs font-bold leading-normal tracking-wide">Profile</p>
+</a>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aventura de Sonidos con Klofky</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4b8fe2",
+              "background-light": "#f6f7f8",
+              "background-dark": "#121820",
+            },
+            fontFamily: {
+              "display": ["Spline Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Spline Sans', sans-serif; }
+        .touch-target { min-height: 160px; min-width: 160px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="relative flex h-screen w-full flex-col">
+<!-- Top Navigation / Status Bar -->
+<div class="flex items-center justify-between p-6">
+<button class="flex items-center justify-center size-14 bg-white dark:bg-slate-800 rounded-full shadow-lg border-b-4 border-slate-200 dark:border-slate-900 active:translate-y-1 active:border-b-0 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl">close</span>
+</button>
+<!-- Progress Bubbles -->
+<div class="flex gap-2">
+<div class="size-4 rounded-full bg-primary"></div>
+<div class="size-4 rounded-full bg-primary/30"></div>
+<div class="size-4 rounded-full bg-primary/30"></div>
+<div class="size-4 rounded-full bg-primary/30"></div>
+</div>
+<button class="flex items-center justify-center size-14 bg-white dark:bg-slate-800 rounded-full shadow-lg border-b-4 border-slate-200 dark:border-slate-900 active:translate-y-1 active:border-b-0 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl">volume_up</span>
+</button>
+</div>
+<!-- Main Interaction Area -->
+<div class="flex-1 flex flex-col items-center justify-center px-6 gap-12">
+<!-- Mentor Avatar (Klofky) -->
+<div class="flex flex-col items-center gap-4">
+<div class="relative group">
+<!-- Glow effect -->
+<div class="absolute inset-0 bg-primary/20 blur-2xl rounded-full scale-110"></div>
+<!-- Avatar Image -->
+<div class="relative bg-white dark:bg-slate-800 p-2 rounded-full border-4 border-primary shadow-xl">
+<div class="size-40 rounded-full bg-cover bg-center" data-alt="Friendly illustrated alien creature smiling brightly" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDczA3aGrQZdC5rc9RcpZInEHvM2tYjGxTpggS3BKLd89wAGioIe18awyWoPNPMArNZ1-z69haBlxCG5_ByYxyt61WaHtD2bDvA5o5I4SIdX0Q3OjnCKija-wViHyAw8BTSjyjRqNVg7tP1nXyZrYt7fIvvT2u7nk5YAnaKxEnnGe-IoVwa9d7foIXh2L6mEs_e0-ynVhrPLtF_3dwEbQ__v4K2UVmPCLKk5RyggsdDwBPw5Rh6He5ehmBA1mRQugGOdAPkQlxtXQA8');">
+</div>
+</div>
+<!-- Voice Wave Effect -->
+<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-white dark:bg-slate-800 px-4 py-2 rounded-full shadow-md border border-primary/20">
+<span class="size-2 bg-primary rounded-full"></span>
+<span class="size-4 bg-primary rounded-full"></span>
+<span class="size-2 bg-primary rounded-full"></span>
+</div>
+</div>
+</div>
+<!-- Choice Grid -->
+<div class="w-full max-w-lg grid grid-cols-2 gap-6">
+<!-- Option 1: Camisa (Target Starts with C/K sound) -->
+<button class="touch-target group relative flex flex-col items-center justify-center bg-white dark:bg-slate-800 rounded-xl shadow-xl border-b-8 border-slate-200 dark:border-slate-950 hover:border-primary active:border-b-0 active:translate-y-2 transition-all p-6">
+<div class="size-28 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+<div class="size-24 bg-cover bg-center" data-alt="Illustration of a colorful button-up shirt" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB01BBdZQpQZhg-Wr76h3kH4Kai5Jb9mdLmUUk1Lnf-xGaO4WBPWmOM3OKRceRh0ngkbAu72_Fu7kYTa9xBTzKllVTHIHaatTOaeM_26n0KxSl0qrlxX-k50wcmXcTKzGTuxkQPIzCi4fvo0kOGZktAhFjM_nb7TbYWbr5u9DqYJPL0SrdLD5DBezcAXwy9-jEU2qss70IHZjLZgYxnXvQlQNFax-BellF7VToZkJS2yV0SajiNM2jgMjoWLxyJnraCEkEEhhJjAMuT');">
+</div>
+</div>
+</button>
+<!-- Option 2: Mesa (Target Starts with M sound) -->
+<button class="touch-target group relative flex flex-col items-center justify-center bg-white dark:bg-slate-800 rounded-xl shadow-xl border-b-8 border-slate-200 dark:border-slate-950 hover:border-primary active:border-b-0 active:translate-y-2 transition-all p-6">
+<div class="size-28 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+<div class="size-24 bg-cover bg-center" data-alt="Illustration of a wooden dining table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAGZZeOoHIz5AWzWGFt1kBvHAAXbt_PRYH10p5ZMGJ7ekHLfgDpOkfSYrtCawb40iQNWrmKeKKfYeiMYL8qm9RCA0BK5WgaZ1tJcTyjMWgNtsqpw4_ZUTaxv-yoe4KnFiZDf6MR2mm3YlYaiTUlT3gETDYuRQ-UajFwytiw0e8wg9909X3hYSWZL_QHMsy-QW601gyoHl2qx43aS17qqJemZWGdIH3eMUOuE1i8ZJbwFRd4Ee5WRBeOoRb9av34mqchHJY0K68-Q_S');">
+</div>
+</div>
+</button>
+</div>
+<!-- Visual Help Button -->
+<button class="mt-4 flex items-center gap-3 bg-primary/10 text-primary px-8 py-4 rounded-full font-bold active:scale-95 transition-transform">
+<span class="material-symbols-outlined">replay</span>
+<span>¿Otra vez?</span>
+</button>
+</div>
+<!-- Navigation Bar -->
+<div class="mt-auto bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-6 py-4">
+<div class="flex items-center justify-around max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-3xl">house</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-3xl">star</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined text-3xl">settings</span>
+</a>
+</div>
+</div>
+</div>
+</body></html>
